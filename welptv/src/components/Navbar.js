@@ -4,10 +4,10 @@ import React from 'react'
 const Navbar = () => {
     return (
         <div style={{border: "solid 0.1px #ffffff", display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img style={{color: 'red', width: "50px"}} src={logo}></img>
+            <img style={{color: 'red', width: "50px"}} src={logo} alt=""/>
 
             <button style={{backgroundColor: '#00ff0050', borderLeft: 'solid 5px #00ff00'}} >
-                <img style={{color: 'red', width: "50px"}} src={logo}></img>
+                <img style={{color: 'red', width: "50px"}} src={logo} alt=""/>
             </button>
         </div>
     )
