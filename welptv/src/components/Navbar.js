@@ -1,16 +1,67 @@
-import logo from "../logo.svg"
-import React from 'react'
+import React from 'react';
+import "../Stylesheets/nav.css";
+import logo from "../logo.svg";
+import verified from '../Icons/verified.svg';
+import maps from '../Icons/maps.svg';
+import pet from '../Icons/pet.svg';
+import send from '../Icons/send.svg';
+import fingerprint from '../Icons/fingerprint.svg';
+
+var navItems = [
+    {
+        name: "Home",
+        path: "/home",
+        icon: verified
+    },
+    {
+        name: "Search",
+        path: "/search",
+        icon: maps
+    },
+    {
+        name: "Live",
+        path: "/live",
+        icon: pet
+    },
+    {
+        name: "Watchlist",
+        path: "/watchlist",
+        icon: send
+    },
+    {
+        name: "Settings",
+        path: "/settings",
+        icon: fingerprint
+    },
+];
 
 const Navbar = () => {
     return (
-        <div style={{border: "solid 0.1px #ffffff", display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img style={{color: 'red', width: "50px"}} src={logo} alt=""/>
+        <div className="navbar">
+            <ul className="navbar-nav">
+                
+                <li className="logo">
+                    <a href="#" className="nav-link">
+                    <span className="link-text">
+                        Logo
+                    </span>
+                    <img src={logo} alt="logo" />
+                    </a>
+                </li>
 
-            <button style={{backgroundColor: '#00ff0050', borderLeft: 'solid 5px #00ff00'}} >
-                <img style={{color: 'red', width: "50px"}} src={logo} alt=""/>
-            </button>
+                {navItems.map(function(val){
+                    return <li className="nav-item">
+                        <a href="#" className="nav-link">
+                            <img src={val.icon} alt="verified" />
+                            <span className="link-text">
+                                {val.name}
+                            </span>
+                        </a>
+                    </li>;
+                })}
+            </ul>
         </div>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
