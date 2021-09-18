@@ -21,7 +21,7 @@
     height: 100%;
     background-color: #0084ff30;
 }
-.fadeTitle {
+.topTitle {
     z-index: 1;
     text-align: center;
     font-size: vmax;
@@ -29,17 +29,6 @@
     text-transform: uppercase;
     color: #00000075;
     margin: 0px;
-}
-.subTitle {
-    z-index: 1;
-    text-align: center;
-    font-size: 0.5rem;
-    font-weight: 700;
-    letter-spacing: 1ch;
-    text-transform: uppercase;
-    color: white;
-    margin: 0px;
-    transition: 300ms;
 }
 .thumbnail:hover .subTitle{
     background-color: black;
@@ -54,7 +43,6 @@
     cursor: pointer;
     position: relative;
     width: 25vh;
-    height: 40vh;
     border-radius: 0.5rem;
     margin: 1rem;
     padding-bottom: 1rem;
@@ -63,32 +51,84 @@
     justify-content: stretch;
     align-items: center;
     transition: 300ms;
+    overflow: hidden;
 }
 .poster:hover {
     background-color: #ffffff20;
 }
-.image {
+.posterImage {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 0.75;
     object-fit: cover;
     border-radius: 0.5rem;
-    margin: 0rem;
     transition: 500ms;
 }
-.poster:hover .image {
-    margin: 1rem;
+.poster:hover .posterImage {
+    transform: scale(1.75);
 }
-.posterTitle {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffffff;
+.poster .title {
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 
+
 .ticket {
-    
+    cursor: pointer;
+    position: relative;
+    width: 40vh;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-left: 0.25rem solid #ffffff00;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 300ms;
+}
+.ticket:hover {
+    border-left: 0.25rem solid #ffffff;
+    background-color: #ffffff20;
+}
+.details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.ticketImage {
+    width: 4rem;
+    aspect-ratio: 1.0;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+.ticket .subTitle {
+    margin-top: 0.5rem;
+}
+
+
+
+.title {
+    z-index: 1;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0px;
+}
+.subTitle {
+    z-index: 1;
+    text-align: center;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1ch;
+    text-transform: uppercase;
+    color: white;
+    margin: 0px;
+    transition: 300ms;
 }
 
 
