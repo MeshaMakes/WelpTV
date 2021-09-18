@@ -1,43 +1,94 @@
 
 .thumbnail {
+    cursor: pointer;
     position: relative;
     width: 40vh;
     height: 28vh;
-    border-radius: 10%;
+    border-radius: 1rem;
     background-color: gray;
     background-image: url("https://i.pinimg.com/originals/ed/00/4b/ed004b904fad8a61094f993eab787e05.jpg");
     background-size: cover;
-    margin-left: 20px;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    color: white;
+    justify-content: center;
+    align-items: center;
 }
 .overlay {
+    z-index: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #00000099;
+    background-color: #0084ff30;
 }
-.thumbnail h1 {
+.fadeTitle {
+    z-index: 1;
     text-align: center;
-    font-size: 16px;
+    font-size: vmax;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #00000075;
     margin: 0px;
 }
-
-.tag {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background-color: #ffffff50;
-    border-radius: 20%;
-    width: 75px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.subTitle {
+    z-index: 1;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1ch;
     text-transform: uppercase;
+    color: white;
+    margin: 0px;
+    transition: 300ms;
 }
+.thumbnail:hover .subTitle{
+    background-color: black;
+    letter-spacing: 0.25ch;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+}
+
+
+
+.poster {
+    cursor: pointer;
+    position: relative;
+    width: 25vh;
+    height: 40vh;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    transition: 300ms;
+}
+.poster:hover {
+    background-color: #ffffff20;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin: 0rem;
+    transition: 500ms;
+}
+.poster:hover .image {
+    margin: 1rem;
+}
+.posterTitle {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+
+.ticket {
+    
+}
+
 
