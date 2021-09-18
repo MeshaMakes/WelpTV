@@ -1,0 +1,9 @@
+
+.thumbnail {
+    width: 40vh;
+    height: 20vh;
+    border-radius: 10%;
+    display: block;
+    background-color: gray;
+    src: url(https://i.pinimg.com/originals/ed/00/4b/ed004b904fad8a61094f993eab787e05.jpg);
+}
