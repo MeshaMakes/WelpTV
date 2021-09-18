@@ -1,6 +1,6 @@
-import "./Stylesheets/app.css";
-import Navbar from "./Components/navbar";
-import SeriesCard from"./Components/seriesCard";
+import "./Utils/Colors.css";
+import Navbar from "./Components/NavBar/NavBar";
+import SeriesCard from"./Components/SeriesCard/SeriesCard";
 
 function App() {
   return (

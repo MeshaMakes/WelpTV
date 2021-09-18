@@ -1,11 +1,11 @@
 import React from 'react';
-import "../Stylesheets/nav.css";
-import logo from "../logo.svg";
-import verified from '../Icons/verified.svg';
-import maps from '../Icons/maps.svg';
-import pet from '../Icons/pet.svg';
-import send from '../Icons/send.svg';
-import fingerprint from '../Icons/fingerprint.svg';
+import "./NavBar.css";
+import logo from "../../logo.svg";
+import verified from '../../Icons/verified.svg';
+import maps from '../../Icons/maps.svg';
+import pet from '../../Icons/pet.svg';
+import send from '../../Icons/send.svg';
+import fingerprint from '../../Icons/fingerprint.svg';
 
 var navItems = [
     {

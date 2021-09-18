@@ -1,0 +1,11 @@
+
+.thumbnail {
+    width: 40vh;
+    height: 25vh;
+    border-radius: 10%;
+    background-color: gray;
+    background-image: url("https://i.pinimg.com/originals/ed/00/4b/ed004b904fad8a61094f993eab787e05.jpg");
+    background-size: contain;
+    text-align: center;
+    align-content: center;
+}

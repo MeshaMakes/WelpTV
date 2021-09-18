@@ -1,10 +1,10 @@
 import React from 'react';
-import "../Stylesheets/seriesCard.css";
+import "./SeriesCard.css";
 
 const SeriesCard = () => {
     return (
         <div className="thumbnail">
-
+            <h1>TOP</h1>
         </div>
     );
 }
