@@ -41,9 +41,9 @@ const Navbar = () => {
             <ul className="navbar-nav">
                 
                 <li className="logo">
-                    <a href="#" className="nav-link">
+                    <a href="https://www.amazon.com/" className="nav-link">
                     <span className="link-text">
-                        Logo
+                        WelpTV
                     </span>
                     <img src={logo} alt="logo" />
                     </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
                 {navItems.map(function(val){
                     return <li className="nav-item">
-                        <a href="#" className="nav-link">
+                        <a href="https://www.amazon.com/" className="nav-link">
                             <img src={val.icon} alt="verified" />
                             <span className="link-text">
                                 {val.name}

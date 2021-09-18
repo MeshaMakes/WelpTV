@@ -1,5 +1,6 @@
 import "./Stylesheets/app.css";
-import Navbar from"./Components/navbar";
+//import Navbar from"./Components/navbar";
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
