@@ -1,5 +1,5 @@
 import "./Stylesheets/app.css";
-import Navbar from"./Components/navbar";
+import Navbar from "./Components/navbar";
 import SeriesCard from"./Components/seriesCard";
 
 function App() {
