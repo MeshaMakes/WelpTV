@@ -1,6 +1,9 @@
 import "./Utils/Colors.css";
 import Navbar from "./Components/NavBar/NavBar";
 import SeriesCard from"./Components/SeriesCard/SeriesCard";
+import Loading from"./Components/Loading/Loading";
+import InfoCard from"./Components/InfoCard/InfoCard";
+
 
 function App() {
 
@@ -23,7 +26,9 @@ function App() {
           <SeriesCard type="poster" data={data}></SeriesCard>
           <SeriesCard type="ticket" data={data}></SeriesCard>
         </div>
-
+        <Loading/>
+        <InfoCard title = "Welcome to WelpTV" desc="WelpTV is an Anitguan-made project by anime watchers, for anime watchers! No ads! No Popups! No distractions! This is the gift WelpTV offers you, and let's make it the gift that keeps on giving by sharing it with others around the island. 
+        WelpTV can and will become the home of all anime enthusiasts in Antigua!!"  />
       </div>
       
       <div className="series"></div>

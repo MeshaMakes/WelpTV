@@ -1,0 +1,15 @@
+.infoCard {
+    background-color: #424242;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.infoCard h2 {
+    color: rgb(3, 194, 89);
+    margin-bottom: 5px;
+}
+
+.infoCard p {
+    color: #fff;
+}

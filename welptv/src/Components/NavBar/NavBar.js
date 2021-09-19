@@ -42,9 +42,6 @@ const Navbar = () => {
                 
                 <li className="logo">
                     <a href="https://www.amazon.com/" className="nav-link">
-                    <span className="link-text">
-                        WelpTV
-                    </span>
                     <img src={logo} alt="logo" />
                     </a>
                 </li>
@@ -53,9 +50,6 @@ const Navbar = () => {
                     return <li className="nav-item">
                         <a href="https://www.amazon.com/" className="nav-link">
                             <img src={val.icon} alt="verified" />
-                            <span className="link-text">
-                                {val.name}
-                            </span>
                         </a>
                     </li>;
                 })}
