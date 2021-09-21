@@ -1,37 +1,37 @@
 import React from 'react';
 import "./NavBar.css";
 import logo from "../../logo.svg";
-import verified from '../../Icons/verified.svg';
-import maps from '../../Icons/maps.svg';
-import pet from '../../Icons/pet.svg';
-import send from '../../Icons/send.svg';
-import fingerprint from '../../Icons/fingerprint.svg';
+import home from '../../Icons/home.svg';
+import search from '../../Icons/search.svg';
+import live from '../../Icons/live.svg';
+import watchlist from '../../Icons/bookmarks.svg';
+import settings from '../../Icons/settings.svg';
 
 var navItems = [
     {
         name: "Home",
         path: "/home",
-        icon: verified
+        icon: home,
     },
     {
         name: "Search",
         path: "/search",
-        icon: maps
+        icon: search,
     },
     {
         name: "Live",
         path: "/live",
-        icon: pet
+        icon: live,
     },
     {
         name: "Watchlist",
         path: "/watchlist",
-        icon: send
+        icon: watchlist,
     },
     {
         name: "Settings",
         path: "/settings",
-        icon: fingerprint
+        icon: settings,
     },
 ];
 
