@@ -1,59 +1,56 @@
 import React from 'react';
 import "./NavBar.css";
-import logo from "../../logo.svg";
-import home from '../../Icons/home.svg';
-import search from '../../Icons/search.svg';
-import live from '../../Icons/live.svg';
-import watchlist from '../../Icons/bookmarks.svg';
-import settings from '../../Icons/settings.svg';
+import {ReactComponent as Logo} from "../../logo.svg";
+import {ReactComponent as Home} from '../../Icons/home.svg';
+import {ReactComponent as Search} from '../../Icons/search.svg';
+import {ReactComponent as Live} from '../../Icons/live.svg';
+import {ReactComponent as Watchlist} from '../../Icons/bookmarks.svg';
+import {ReactComponent as Settings} from '../../Icons/settings.svg';
 
 var navItems = [
     {
         name: "Home",
         path: "/home",
-        icon: home,
+        icon: <Home/>,
     },
     {
         name: "Search",
         path: "/search",
-        icon: search,
+        icon: <Search/>,
     },
     {
         name: "Live",
         path: "/live",
-        icon: live,
+        icon: <Live/>,
     },
     {
         name: "Watchlist",
         path: "/watchlist",
-        icon: watchlist,
+        icon: <Watchlist/>,
     },
     {
         name: "Settings",
         path: "/settings",
-        icon: settings,
+        icon: <Settings/>,
     },
 ];
 
 const Navbar = () => {
     return (
         <div className="navbar">
-            <ul className="navbar-nav">
-                
-                <li className="logo">
-                    <a href="https://www.amazon.com/" className="nav-link">
-                    <img src={logo} alt="logo" />
-                    </a>
-                </li>
+            <div className="logo">
+                <a href="https://www.amazon.com/">
+                    <Logo/>
+                </a>
+            </div>
 
-                {navItems.map(function(val){
-                    return <li className="nav-item">
-                        <a href="https://www.amazon.com/" className="nav-link">
-                            <img src={val.icon} alt="verified" />
-                        </a>
-                    </li>;
-                })}
-            </ul>
+            {navItems.map(function(val){
+                return <div key={val.name} className="nav-item">
+                    <a href="https://www.amazon.com/">
+                        {val.icon}
+                    </a>
+                </div>;
+            })}
         </div>
     );
 }

@@ -10,6 +10,7 @@
 .App {
   background-color: #000000;
   height: 100vh;
+  width: 100vw;
   padding: 1rem;
   display: flex;
   box-sizing: border-box;
