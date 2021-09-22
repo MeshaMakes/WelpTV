@@ -3,7 +3,6 @@ import "./SeriesCard.css";
 
 const SeriesCard = (props) => {
     if(props.type === "thumbnail"){
-        console.log(props);
         return (
             <div className="thumbnail" style={{backgroundImage: props.data.image}}>
                 <div className="overlay" style={{backgroundColor: props.data.color}}></div>
