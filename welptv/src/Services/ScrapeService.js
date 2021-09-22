@@ -6,7 +6,7 @@ export const ScrapeContext = createContext({});
 
 const ScrapeContextProvider = (props) => {
     const state = useState({});
-    const scrapeSearch = ()=> search("hunter");
+    const scrapeSearch = ()=> search("hunter x");
     const scrapeSeries = ()=>{
         
     }
@@ -33,7 +33,7 @@ const ScrapeContextProvider = (props) => {
 
 function search(val){
     const corsProxy = "https://api.allorigins.win/get?url=";
-    const url = corsProxy + "https://animeowl.net/?s=" + val;
+    const url = corsProxy + "https://www.animekisa.cc/search?name=" + val;
     fetch(url).then(function(response){
         if(response.ok) {
             return response.text();
@@ -46,18 +46,19 @@ function search(val){
         let list = [];
 	    var page = new DOMParser().parseFromString(stringFix(data), 'text/html');
 
-        const items = page.querySelector("main[id='site-content'] div.posts-block div.posts");
+        const items = page.querySelector("div.main-container div.maindark div.zr-list ul");
+        
         for(let i = 0; i < items.children.length; i++) {
             const obj = new DOMParser().parseFromString(items.children[i].innerHTML, 'text/html');
-            const img = obj.querySelector('img').getAttribute('src');
-            const name = obj.querySelector('a h4').innerHTML;
-            const url = obj.querySelector('a.post-thumb').getAttribute('href').replace("/category/", "");
-            const released = obj.querySelector('a div.ep-count').innerHTML.trim();
+            const img = obj.querySelector('a div img').getAttribute('src');
+            const name = obj.querySelector('a div span.result-title').innerHTML;
+            const url = obj.querySelector('a.asfo').getAttribute('href').replace("/category/", "");
+            const status = obj.querySelector('a div span.result-latest').innerHTML.trim();
             list[i] = {
                 image: img,
                 name: name,
-                url: url, 
-                release: released,
+                url: url,
+                extra: status,
             };
         }
         console.log(list);
