@@ -1,53 +1,48 @@
-@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-body {
-    background-color: #f2f2f2;
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .search {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
 .searchText {
-    float: left;
-    width: 100%;
-    border: 3px solid #00B4CC;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px;
-    outline: none;
-    color: #9DBFAF;
+  width: 100%;
+  border: 3px solid rgb(3, 194, 89);
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
 }
 
-.searchText:focus {
-    color: #00b4cc;
+.searchText:focus{
+  color: #242424;
 }
 
-.searchBtn {
-    position: absolute;
-    right: -50px;
-    width: 40px;
-    height: 36px;
-    opacity: 0;
-    cursor: pointer;
+.submitBtn {
+  width: auto;
+  height: 36px;
+  border: 1px solid rgb(3, 194, 89);
+  background: rgb(3, 194, 89);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.search:before {
-    position: absolute;
-    right: -50px;
-    width: 40px;
-    height: 36px;
-    line-height: 36px;
-    background: #00B4CC;
-    text-align: center;
-    color: #fff;
-    border-radius: 5px;
-    font-family: 'FontAwesome';
-    content: '\f002';
-}
-
-.wrap {
-    width: 60%;
-    margin: 10% auto;
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
