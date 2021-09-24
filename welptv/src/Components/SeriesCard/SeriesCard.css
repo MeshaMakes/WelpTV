@@ -1,134 +1,164 @@
+.title {
+  z-index: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0px;
+}
+.subTitle {
+  text-align: center;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1ch;
+  text-transform: uppercase;
+  color: white;
+  margin: 0px;
+  text-overflow: ellipsis;
+  transition: 300ms;
+}
 
 .thumbnail {
-    cursor: pointer;
-    position: relative;
-    width: 40vh;
-    height: 28vh;
-    border-radius: 1rem;
-    background-color: gray;
-    background-image: url("https://i.pinimg.com/originals/ed/00/4b/ed004b904fad8a61094f993eab787e05.jpg");
-    background-size: cover;
-    margin-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  cursor: pointer;
+  width: 19vw;
+  height: 13vw;
+  border-radius: 1rem;
+  background-color: white;
+  background-image: url("https://i.pinimg.com/originals/ed/00/4b/ed004b904fad8a61094f993eab787e05.jpg");
+  background-size: cover;
+  margin-left: 2rem;
+  overflow: hidden;
 }
 .overlay {
-    z-index: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #0084ff30;
+  width: 100%;
+  height: 100%;
+  background-color: #0084ff30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .topTitle {
-    z-index: 1;
-    text-align: center;
-    font-size: vmax;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #00000075;
-    margin: 0px;
+  text-align: center;
+  font-size: vmax;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #00000075;
+  margin: 0px;
 }
-.thumbnail:hover .subTitle{
-    background-color: black;
-    letter-spacing: 0.25ch;
-    padding: 0.5rem;
-    font-size: 0.75rem;
+.thumbnail:hover .subTitle {
+  background-color: black;
+  letter-spacing: 0.25ch;
+  padding: 0.5rem;
+  font-size: 0.75rem;
 }
 
 /**********************************************************************/
 
 .poster {
-    cursor: pointer;
-    position: relative;
-    width: 25vh;
-    border-radius: 0.5rem;
-    margin: 1rem;
-    padding-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
-    transition: 300ms;
-    overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  width: 25vh;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  transition: 300ms;
+  overflow: hidden;
 }
 .poster:hover {
-    background-color: #ffffff20;
+  background-color: #ffffff20;
 }
 .posterImage {
-    width: 100%;
-    aspect-ratio: 0.75;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    transition: 500ms;
+  width: 100%;
+  aspect-ratio: 0.75;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: 500ms;
 }
 .poster:hover .posterImage {
-    transform: scale(1.75);
+  transform: scale(1.75);
 }
 .poster .title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /**********************************************************************/
 
 .ticket {
-    cursor: pointer;
-    position: relative;
-    width: 40vh;
-    border-radius: 0.5rem;
-    margin: 1rem;
-    padding: 0.5rem;
-    border-left: 0.25rem solid #ffffff00;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    transition: 300ms;
+  cursor: pointer;
+  width: 40vw;
+  max-height: 40vw;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-left: 0.25rem solid #ffffff00;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 300ms;
 }
 .ticket:hover {
-    border-left: 0.25rem solid #ffffff;
-    background-color: #ffffff20;
+  border-left: 0.25rem solid #ffffff;
+  background-color: #ffffff20;
 }
 .details {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
 }
 .ticketImage {
-    width: 4rem;
-    aspect-ratio: 1.0;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+.ticket .title {
+  text-align: start;
 }
 .ticket .subTitle {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: start;
 }
 
 /**********************************************************************/
 
-.title {
-    z-index: 1;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0px;
-}
-.subTitle {
-    z-index: 1;
-    text-align: center;
-    font-size: 0.5rem;
-    font-weight: 700;
-    letter-spacing: 1ch;
-    text-transform: uppercase;
-    color: white;
-    margin: 0px;
-    transition: 300ms;
-}
+@media only screen and (max-width: 600px) {
+  .thumbnail {
+    min-width: 65vw;
+    height: 40vw;
+  }
 
+  .thumbnail .subTitle {
+    background-color: black;
+    letter-spacing: 0.25ch;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
 
+  .ticket {
+    width: calc(50vw - 3rem);
+    border-left: 0.1rem solid #ffffff;
+  }
+
+  .details {
+    max-height: calc(50vw - 3rem);
+  }
+
+  .ticket .title {
+    max-height: 3rem;
+  }
+  .ticket .subTitle {
+    max-height: 0.75rem;
+    letter-spacing: 0.25ch;
+  }
+}

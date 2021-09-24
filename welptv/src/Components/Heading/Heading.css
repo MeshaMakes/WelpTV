@@ -1,0 +1,31 @@
+
+.headingContainer {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: content-box;
+    border-bottom: 0.05rem solid #ffffff00;
+    transition: 600ms;
+}
+
+.headingContainer:hover {
+    border-bottom: 0.05rem solid #ffffff30;
+}
+
+.headingTitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.headingContent {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem 2rem;
+}
+

@@ -13,10 +13,10 @@ const ScrapeContextProvider = (props) => {
 
 
     useEffect(() => {
-        //scrapeLatest();
-        //scrapeSearch();
+        scrapeLatest();
+        scrapeSearch();
         scrapeSeries();
-        //scrapeEpisode();
+        scrapeEpisode();
     }, []);
     
     return (

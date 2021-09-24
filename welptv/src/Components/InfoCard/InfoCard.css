@@ -1,15 +1,17 @@
 .infoCard {
-    background-color: #424242;
+    background-color: #202020;
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
 }
 
 .infoCard h2 {
+    letter-spacing: 0.1ch;
     color: rgb(3, 194, 89);
     margin-bottom: 5px;
 }
 
 .infoCard p {
     color: #fff;
+    font-weight: 500;
 }
