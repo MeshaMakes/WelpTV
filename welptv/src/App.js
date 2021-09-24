@@ -8,8 +8,8 @@ function App() {
   return <ScrapeContextProvider>
     <BrowserRouter>
         <Switch>
-          <Route path="/home"> <HomeScreen /> </Route>
           <Route path="/search"> <SearchScreen /> </Route>
+          <Route path="/"> <HomeScreen /> </Route>
         </Switch>
       </BrowserRouter>
   </ScrapeContextProvider>;
