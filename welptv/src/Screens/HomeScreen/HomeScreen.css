@@ -10,7 +10,7 @@
   justify-content: flex-start;
 }
 
-.navContainer {
+.homeNavContainer {
   width: min-content;
   height: 100%;
   box-sizing: border-box;
@@ -39,7 +39,7 @@
   overflow: auto;
   white-space: nowrap;
 }
-.seriesGrid {
+.homeSeriesGrid {
   width: 100%;
   padding: 2rem 5rem 2rem 2.5rem;
   box-sizing: border-box;
@@ -69,21 +69,21 @@
     justify-content: center;
   }
 
-  .navContainer {
+  .homeNavContainer {
     height: min-content;
     width: 100%;
     box-sizing: border-box;
     padding: 0rem;
   }
   
-  .main {
+  .homeMain {
     width: 100%;
     height: 100%;
     padding: 1rem;
     padding-bottom: 5rem;
   }
 
-  .seriesGrid {
+  .homeSeriesGrid {
     padding: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   }

@@ -21,7 +21,7 @@ function HomeScreen() {
 
   return (
     <div className="home">
-      <div className="navContainer">
+      <div className="homeNavContainer">
         <Navbar />
       </div>
 
@@ -29,7 +29,7 @@ function HomeScreen() {
         <InfoCard title={message.title} desc={message.body} />
 
         <Heading title="Recently Updated" margin="0rem 0rem 3rem 0rem" padding="0">
-          <div className="seriesGrid">
+          <div className="homeSeriesGrid">
             <SeriesCard type="poster" data={data}></SeriesCard>
             <SeriesCard type="poster" data={data}></SeriesCard>
             <SeriesCard type="poster" data={data}></SeriesCard>

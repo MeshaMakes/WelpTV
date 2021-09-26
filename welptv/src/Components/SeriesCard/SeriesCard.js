@@ -15,9 +15,9 @@ const SeriesCard = (props) => {
   if (props.type === "thumbnail") {
     return (
       <div className="thumbnail" style={{ backgroundImage: props.data.image }}>
-        <div className="overlay" style={{ backgroundColor: props.data.color }}>
-          <h1 className="topTitle">THE TOP 10</h1>
-          <h1 className="subTitle">{props.data.title}</h1>
+        <div className="thumbnailOverlay" style={{ backgroundColor: props.data.color }}>
+          <h1 className="thumbnailTitle">THE TOP 10</h1>
+          <h1 className="cardSubTitle">{props.data.title}</h1>
         </div>
       </div>
     );
@@ -29,8 +29,8 @@ const SeriesCard = (props) => {
           src={props.data.image}
           alt={props.data.title}
         />
-        <h1 className="title">{props.data.title}</h1>
-        <h1 className="subTitle">{props.data.season}</h1>
+        <h1 className="cardTitle">{props.data.title}</h1>
+        <h1 className="cardSubTitle">{props.data.season}</h1>
       </div>
     );
   } else {
@@ -41,9 +41,9 @@ const SeriesCard = (props) => {
           src={props.data.image}
           alt={props.data.title}
         />
-        <div className="details">
-          <h1 className="title">{props.data.title}</h1>
-          <h1 className="subTitle">{props.data.season}</h1>
+        <div className="ticketDetails">
+          <h1 className="cardTitle">{props.data.title}</h1>
+          <h1 className="cardSubTitle">{props.data.season}</h1>
         </div>
       </div>
     );
