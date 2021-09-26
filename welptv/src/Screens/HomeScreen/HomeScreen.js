@@ -25,7 +25,7 @@ function HomeScreen() {
         <Navbar />
       </div>
 
-      <div className="main">
+      <div className="homeMain">
         <InfoCard title={message.title} desc={message.body} />
 
         <Heading title="Recently Updated" margin="0rem 0rem 3rem 0rem" padding="0">
