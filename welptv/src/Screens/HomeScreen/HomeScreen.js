@@ -26,6 +26,8 @@ function HomeScreen() {
       </div>
 
       <div className="main">
+        <InfoCard title={message.title} desc={message.body} />
+
         <Heading title="Recently Updated" margin="0rem 0rem 3rem 0rem" padding="0">
           <div className="seriesGrid">
             <SeriesCard type="poster" data={data}></SeriesCard>
@@ -50,7 +52,6 @@ function HomeScreen() {
             <SeriesCard type="thumbnail" data={data}></SeriesCard>
           </div>
         </Heading>
-
 
         <Heading title="Recently Viewed" margin="0rem 0rem 3rem 0rem" padding="0">
           <div className="historyGrid">
