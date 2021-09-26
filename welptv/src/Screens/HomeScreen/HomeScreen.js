@@ -53,7 +53,11 @@ function HomeScreen() {
 
 
         <Heading title="Recently Viewed" margin="0rem 0rem 3rem 0rem" padding="0">
-          <div className="seriesGrid">
+          <div className="historyGrid">
+            <SeriesCard type="ticket" data={data}></SeriesCard>
+            <SeriesCard type="ticket" data={data}></SeriesCard>
+            <SeriesCard type="ticket" data={data}></SeriesCard>
+            <SeriesCard type="ticket" data={data}></SeriesCard>
             <SeriesCard type="ticket" data={data}></SeriesCard>
           </div>
         </Heading>

@@ -49,6 +49,17 @@
   align-items: center;
   justify-items: center;
 }
+.historyGrid {
+  width: 100%;
+  padding: 2rem 5rem 2rem 2rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+}
 
 @media only screen and (max-width: 600px) {
   .home {
@@ -75,6 +86,11 @@
   .seriesGrid {
     padding: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  }
+  .historyGrid {
+    padding: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 3rem), 1fr));
   }
 }
 
