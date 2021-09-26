@@ -16,18 +16,20 @@
 }
 
 .logo {
-  width: auto;
+  width: 5rem;
+  height: 5rem;
   margin-bottom: 1rem;
   background: #353535;
+  overflow: hidden;
 }
 .logo svg {
-  width: 5rem;
+  width: auto;
   fill: #49df7b;
-  transform: rotate(0deg);
   transition: transform 600ms;
+  transform: scale(1.25);
 }
 .navbar:hover .logo svg {
-  transform: rotate(-180deg);
+  transform: scale(1);
 }
 
 .nav-item {
@@ -91,3 +93,4 @@
     display: none;
   }
 }
+

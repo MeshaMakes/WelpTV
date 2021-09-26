@@ -11,7 +11,7 @@ import { ReactComponent as Settings } from "../../Icons/settings.svg";
 var navItems = [
   {
     name: "Home",
-    path: "/home",
+    path: "/",
     icon: <Home />,
   },
   {
@@ -40,14 +40,14 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <a href="https://www.amazon.com/">
+        <a href="/">
           <Logo />
         </a>
       </div>
 
       {navItems.map(function (val) {
         return (
-          <NavLink key={val.name} className="nav-item" activeClassName="is-active" to={val.path}>
+          <NavLink key={val.name} className="nav-item" activeClassName="is-active" to={val.path} >
             {val.icon}
           </NavLink>
         );
