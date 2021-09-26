@@ -47,7 +47,12 @@ const Navbar = () => {
 
       {navItems.map(function (val) {
         return (
-          <NavLink key={val.name} className="nav-item" activeClassName="is-active" to={val.path} >
+          <NavLink
+            key={val.name}
+            className="nav-item"
+            activeClassName="is-active"
+            to={val.path}
+          >
             {val.icon}
           </NavLink>
         );

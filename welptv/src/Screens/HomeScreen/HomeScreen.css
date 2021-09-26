@@ -30,6 +30,26 @@
 }
 
 
+.topPicksContainer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem 2rem;
+  overflow: auto;
+  white-space: nowrap;
+}
+.seriesGrid {
+  width: 100%;
+  padding: 2rem 5rem 2rem 2.5rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: center;
+  justify-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   .home {
     flex-direction: column-reverse;
@@ -49,6 +69,12 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .seriesGrid {
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   }
 }
 

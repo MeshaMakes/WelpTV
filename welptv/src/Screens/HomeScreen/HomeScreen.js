@@ -26,23 +26,38 @@ function HomeScreen() {
       </div>
 
       <div className="main">
-        <Heading title="Top Picks by the Developers of Welptv" padding="0">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              width: "100%",
-              padding: "1.5rem 2rem",
-              overflow: "auto",
-            }}
-          >
+        <Heading title="Recently Updated" margin="0rem 0rem 3rem 0rem" padding="0">
+          <div className="seriesGrid">
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+            <SeriesCard type="poster" data={data}></SeriesCard>
+          </div>
+        </Heading>
+
+        <Heading title="Top Picks by the Developers of Welptv" margin="0rem 0rem 3rem 0rem" padding="0">
+          <div className="topPicksContainer">
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
+            <SeriesCard type="thumbnail" data={data}></SeriesCard>
             <SeriesCard type="thumbnail" data={data}></SeriesCard>
           </div>
         </Heading>
 
-        <SeriesCard type="poster" data={data}></SeriesCard>
-        <SeriesCard type="ticket" data={data}></SeriesCard>
-        <InfoCard title={message.title} desc={message.body} />
+
+        <Heading title="Recently Viewed" margin="0rem 0rem 3rem 0rem" padding="0">
+          <div className="seriesGrid">
+            <SeriesCard type="ticket" data={data}></SeriesCard>
+          </div>
+        </Heading>
+
         <InfoCard title={message.title} desc={message.body} />
       </div>
     </div>

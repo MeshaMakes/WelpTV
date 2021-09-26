@@ -1,7 +1,17 @@
-import React from "react";
+import { React, useRef, useEffect } from "react";
 import "./SeriesCard.css";
 
 const SeriesCard = (props) => {
+  const cardRef = useRef();
+
+  useEffect(() => {
+    if (cardRef && cardRef?.current) {
+      var width = cardRef.current.getBoundingClientRect().width
+      var img = cardRef.current.firstElementChild;
+      img.style.height = (width/0.75) + "px";
+    }
+  }, [cardRef]);
+
   if (props.type === "thumbnail") {
     return (
       <div className="thumbnail" style={{ backgroundImage: props.data.image }}>
@@ -13,7 +23,7 @@ const SeriesCard = (props) => {
     );
   } else if (props.type === "poster") {
     return (
-      <div className="poster">
+      <div ref={cardRef} className="poster">
         <img
           className="posterImage"
           src={props.data.image}
