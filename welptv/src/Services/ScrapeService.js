@@ -20,15 +20,15 @@ const ScrapeContextProvider = (props) => {
   const values = Vals();
 
   const scrapeEpisode = (url) => {
-    if(values.episode?.url !== url){
+    if (values.episode?.url !== url) {
       values.setEpisode(null);
-      getEpisode(url).then((data)=>{
+      getEpisode(url).then((data) => {
         values.setEpisode(data);
       });
     }
-  }
+  };
   const scrapeSeries = (url) => {
-    if(values.series?.url !== url){
+    if (values.series?.url !== url) {
       values.setEpisode(null);
       getInfo(url).then((data) => {
         scrapeEpisode(data.episodes[0].url);
@@ -60,9 +60,6 @@ const ScrapeContextProvider = (props) => {
     </ScrapeContext.Provider>
   );
 };
-
-
-
 
 async function latest() {
   const corsProxy = "https://api.allorigins.win/get?url=";
