@@ -3,8 +3,8 @@ import "./Loading.css"
 
 const Loading = () => {
     return (
-        <div className="dualRing">
-            
+        <div className="loadingContainer">
+            <div className="dualRing" />
         </div>
     )
 }

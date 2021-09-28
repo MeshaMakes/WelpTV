@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/search"> {" "} <SearchScreen />{" "} </Route>
-          <Route path="/live"> {" "} <SeriesScreen />{" "} </Route>
+          <Route path="/series"> {" "} <SeriesScreen />{" "} </Route>
           <Route path="/"> {" "} <HomeScreen />{" "} </Route>
         </Switch>
       </BrowserRouter>

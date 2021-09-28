@@ -56,14 +56,13 @@
 
 .poster {
   cursor: pointer;
-  position: relative;
   width: 100%;
   border-radius: 0.5rem;
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   transition: 300ms;
   overflow: hidden;
 }
@@ -81,11 +80,13 @@
 }
 .poster .cardTitle {
   z-index: 1;
+  width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 .poster .cardSubTitle {
   z-index: 1;
+  width: 100%;
 }
 
 /**********************************************************************/

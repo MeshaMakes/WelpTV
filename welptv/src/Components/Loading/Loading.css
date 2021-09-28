@@ -1,15 +1,21 @@
+
+.loadingContainer {
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+}
+
 .dualRing {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
 }
 
 .dualRing::after {
     content: " ";
     display: block;
-    width: 20px;
-    height: 20px;
-    margin: 8px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     border: 3px solid rgb(154, 233, 108);
     border-color: rgb(154, 233, 108) transparent rgb(154, 233, 108) transparent;
@@ -24,3 +30,4 @@
         transform: rotate(360deg);
     }
 }
+

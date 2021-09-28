@@ -1,6 +1,10 @@
-import { React, useRef, useEffect } from "react";
+import { React, useRef } from "react";
 import "./SeriesScreen.css";
+import ScrapeContext from "../../Services/ScrapeContext";
 import Navbar from "./../../Components/NavBar/NavBar";
+import Loading from "./../../Components/Loading/Loading";
+import { ReactComponent as Play } from "../../Icons/play.svg";
+import { ReactComponent as Eye } from "../../Icons/eye.svg";
 
 const data = [
   "https://images.unsplash.com/photo-1628191079582-f982c2fe327b?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
@@ -41,70 +45,122 @@ const data = [
 ];
 
 const SeriesScreen = () => {
-  const iframeRef = useRef();
-
-  useEffect(() => {
-    if (iframeRef && iframeRef?.current) {
-      var width = iframeRef.current.getBoundingClientRect().width;
-      iframeRef.current.style.height = width / 1.75 + "px";
-    }
-  }, [iframeRef]);
-
   return (
-    <div className="series">
-      <div className="seriesNavContainer">
-        <Navbar />
-      </div>
+    <ScrapeContext.Consumer>
+      {(state) => {
+        return (
+          <div className="series">
+            <div className="seriesNavContainer">
+              <Navbar />
+            </div>
 
-      <div className="seriesMain">
-        <div className="content">
-          <div className="video">
-            <iframe
-              ref={iframeRef}
-              src="https://play.api-web.site/video.php?id=MTcwODUx"
-              scrolling="no"
-              frameborder="0"
-              allowFullScreen
-              autoplay="no"
-              title="anything"
-            ></iframe>
-          </div>
-          <div className="details">
-            <img
-              src="https://images.unsplash.com/photo-1628191079582-f982c2fe327b?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="sumn"
-            />
-            <div className="info">
-              <span>
-                <span className="seriesTitle">Tile</span>
-                <span className="seriesStatus"> Status</span>
-              </span>
-              <div className="genres">
-                <h1>1</h1>
-                <h1>2</h1>
-                <h1>3</h1>
+            <div className="seriesMain">
+              <div className="seriesContent">
+                <VideoSection episode={state.values.episode} />
+                {infoSection()}
               </div>
+
+              <EpisodeSection
+                episodes={state.values?.series?.episodes}
+                scrapeEpisode={state.scrapeEpisode}
+                currentEpisode={state.values.episode}
+              />
+
             </div>
           </div>
-          <h1 className="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-            explicabo quis dolorum asperiores autem sint error eum numquam eius
-            veritatis?
-          </h1>
-        </div>
-
-        <div className="episodes">
-          {data.map(function (link) {
-            return (
-              <div style={{ margin: "1rem" }}>
-                <h1>episode</h1>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+        );
+      }}
+    </ScrapeContext.Consumer>
   );
 };
+
+function VideoSection({ episode }) {
+  const iframeRef = useRef();
+
+  if (episode) {
+    return (
+      <div className="video">
+        <iframe
+          ref={iframeRef}
+          src={episode.videoUrl}
+          scrolling="no"
+          frameBorder="0"
+          allowFullScreen
+          title="anything"
+          onLoad={() => {
+            var width = iframeRef.current.getBoundingClientRect().width;
+            iframeRef.current.style.height = width / 1.75 + "px";
+          }}
+        ></iframe>
+      </div>
+    );
+  } else {
+    return <Loading />;
+  }
+}
+
+function infoSection() {
+  return (
+    <div className="seriesDetails">
+      <div className="seriesDetailsRow">
+        <img src={data[0]} alt="sumn" />
+
+        <div className="info">
+          <span className="seriesTitle">
+            Title
+            <span className="seriesStatus"> Status</span>
+          </span>
+          <div className="genres">
+            <h1>1</h1>
+            <h1>2</h1>
+            <h1>3</h1>
+          </div>
+        </div>
+      </div>
+
+      <h1 className="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
+        explicabo quis dolorum asperiores autem sint error eum numquam eius
+        veritatis?
+      </h1>
+    </div>
+  );
+}
+
+function EpisodeSection({ episodes, scrapeEpisode, currentEpisode }) {
+  if (episodes && scrapeEpisode) {
+    return (
+      <div className="episodes">
+        {episodes.map(function (data, index) {
+          if (currentEpisode?.url === data.url) {
+            return (
+              <div key={data.url} className="episode episode-current">
+                <Play />
+                <h1>episode {index + 1}</h1>
+                <Eye />
+              </div>
+            );
+          } else {
+            return (
+              <div
+                key={data.url}
+                className="episode"
+                onClick={() => {
+                  scrapeEpisode(data.url);
+                }}
+              >
+                <Play />
+                <h1>episode {index + 1}</h1>
+                <Eye />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  } else {
+    return <Loading />;
+  }
+}
 
 export default SeriesScreen;
