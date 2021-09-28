@@ -242,7 +242,7 @@ async function getInfo(seriesUrl) {
         description: descSrc,
         genres: genres,
         status: statusSrc,
-        episodes: episodes,
+        episodes: episodes.reverse(),
       };
     });
 }
