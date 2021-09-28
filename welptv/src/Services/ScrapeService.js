@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ScrapeContext from "./ScrapeContext";
 
-const Vals = () => {
+const Values = () => {
   const [latest, setLatest] = useState();
   const [series, setSeries] = useState();
   const [episode, setEpisode] = useState();
+  const [searchResults, setSearchResults] = useState();
 
   return {
     latest,
@@ -13,11 +14,13 @@ const Vals = () => {
     setSeries,
     episode,
     setEpisode,
+    searchResults,
+    setSearchResults,
   };
 };
 
 const ScrapeContextProvider = (props) => {
-  const values = Vals();
+  const values = Values();
 
   const scrapeEpisode = (url) => {
     if (values.episode?.url !== url) {
@@ -41,17 +44,23 @@ const ScrapeContextProvider = (props) => {
       values.setLatest(data);
     });
   };
+  const scrapeSearch = (searchKey) => {
+    search(searchKey).then((data) => {
+      values.setSearchResults(data);
+    });
+  }
 
   const state = {
     values: values,
     scrapeLatest: scrapeLatest,
-    scrapeSearch: () => search("hunter x"),
+    scrapeSearch: scrapeSearch,
     scrapeSeries: scrapeSeries,
     scrapeEpisode: scrapeEpisode,
   };
 
   useEffect(() => {
     scrapeLatest();
+    scrapeSearch("hunter x");
   }, []);
 
   return (
@@ -60,6 +69,10 @@ const ScrapeContextProvider = (props) => {
     </ScrapeContext.Provider>
   );
 };
+
+
+//********************************************************************** */
+
 
 async function latest() {
   const corsProxy = "https://api.allorigins.win/get?url=";
@@ -107,10 +120,10 @@ async function latest() {
     });
 }
 
-function search(val) {
+async function search(val) {
   const corsProxy = "https://api.allorigins.win/get?url=";
   const url = corsProxy + "https://www.animekisa.cc/search?name=" + val;
-  fetch(url)
+  return fetch(url)
     .then(function (response) {
       if (response.ok) {
         return response.text();
@@ -149,7 +162,8 @@ function search(val) {
           extra: status,
         };
       }
-      console.log(list);
+
+      return list;
     });
 }
 
