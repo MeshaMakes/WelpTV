@@ -1,38 +1,67 @@
-.search {
+.searchBox {
   width: 100%;
-  position: relative;
+  border-radius: 2.5rem;
   display: flex;
+  padding: 0 1rem;
+  transition: 0.4s;
 }
 
-.searchText {
+.searchBox:hover {
+  background-color: #202020;
+}
+
+.searchBox:hover > .searchInput{
   width: 100%;
-  border: 3px solid rgb(3, 194, 89);
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
-  background-color: black;
 }
 
-.searchText:focus{
-  color: #242424;
+.searchInput:focus {
+  width: 100%;
+  border-radius: 0;
+  border-bottom: 0.05rem solid #fff;
 }
 
-.submitBtn {
-  width: auto;
-  height: 36px;
-  border: 1px solid rgb(3, 194, 89);
-  background: rgb(3, 194, 89);
-  text-align: center;
+
+.searchBox:hover > .searchBtn {
+  background-color: rgb(3, 194, 89);
   color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: auto;
+.searchBtn {
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #202020;
+  align-self: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  border-radius: 2.5rem;
+  background: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.4s;
+  line-height: 2.5rem;
+  height: 2.5rem;
+  padding: 0.625rem;
+  width: 0;
+}
+
+.searchBtn svg {
+  width: 1.5rem;
+  fill: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .searchBox {
+    box-sizing: border-box;
+  }
+
+  .searchBox:hover > .searchInput {
+    width: 100%;
+    padding: 0.625rem;
+  }
 }

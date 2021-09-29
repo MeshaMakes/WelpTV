@@ -1,16 +1,27 @@
-import React from 'react'
+import {React, useRef} from 'react'
+import { ReactComponent as Search } from "../../Icons/search.svg";
 import "./SearchBar.css"
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+    const getSearch = (e) => {
+        if(e) {
+            e.preventDefault();
+            let searchVal = e.target.elements.searchTxt.value;
+
+            if(searchVal !== "") {
+                props.onSubmitted(searchVal)
+            }
+        }
+        console.log(e.target.elements.searchTxt.value);
+    }
+
     return (
-        <div className="wrap">
-            <div className="search">
-                <input className="searchText" type="text" name="searchText" placeholder="Enter an anime"/>
-                <button className="submitBtn" type="submit" name="submitBtn">
-                Search
-                </button>
-            </div>
-        </div>
+        <form className="searchBox" onSubmit={getSearch}>
+            <input id="searchTxt"  className="searchInput" type="text" placeholder="Enter a Series Name"/>
+            <button className="searchBtn" href="#">
+                <Search/>
+            </button>
+        </form>
     )
 }
 

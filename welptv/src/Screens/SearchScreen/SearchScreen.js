@@ -3,6 +3,7 @@ import ScrapeContext from "../../Services/ScrapeContext";
 import { useHistory } from "react-router-dom";
 import Navbar from "./../../Components/NavBar/NavBar";
 import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
+import Search from "../../Components/SearchBar/SearchBar";
 import Loading from "./../../Components/Loading/Loading";
 import Heading from "./../../Components/Heading/Heading";
 
@@ -16,9 +17,12 @@ function SearchScreen() {
             <div className="searchNavContainer">
               <Navbar />
             </div>
-
+          
             <div className="searchMain">
-              <Latest
+
+              <Search onSubmitted={(val) => state.scrapeSearch(val)}/>
+
+              <Results
                 list={state.values?.searchResults}
                 scrapeSeries={state.scrapeSeries}
               />
@@ -30,7 +34,7 @@ function SearchScreen() {
   );
 }
 
-function Latest({ list, scrapeSeries }) {
+function Results({ list, scrapeSeries }) {
   let history = useHistory();
   const openSeries = (item) => {
     scrapeSeries(item.url);
