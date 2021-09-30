@@ -30,9 +30,11 @@
 
 .seriesContent {
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 }
+
 
 .video {
   width: 100%;
@@ -41,6 +43,7 @@
   width: 100%;
   height: 100%;
 }
+
 
 .seriesDetails {
   box-sizing: border-box;
@@ -53,6 +56,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  overflow: hidden;
 }
 .seriesDetailsRow {
   width: 100%;
@@ -71,11 +75,11 @@
 }
 .seriesTitle {
   color: #49df7b;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   margin: 0;
   padding: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 .seriesStatus {
   color: #fff;
@@ -83,9 +87,8 @@
   font-weight: 500;
   letter-spacing: 0.5ch;
   text-transform: uppercase;
-  margin: 0 0 0 1rem;
+  margin: 0;
   padding: 0;
-  vertical-align: top;
 }
 .genres {
   font-size: 0.75rem;
@@ -108,41 +111,57 @@
 
 
 .episodes {
-  width: min-content;
-  height: 100%;
   box-sizing: border-box;
-  padding-left: 4rem;
-  padding-right: 2rem;
+  min-width: fit-content;
+  height: 100%;
+  margin-left: 3rem;
+  border: 0.01rem solid #ffffff50;
+  border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.episodeDetails {
+  box-sizing: border-box;
+  width: 100%;
+  height: min-content;
+  padding: 1rem;
+  background-color: #202020;
 }
 
 .episode {
   cursor: pointer;
+  box-sizing: border-box;
   width: 100%;
   height: min-content;
-  background-color: #202020;
-  border-radius: 1rem;
-  margin: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.episode:hover {
+  background-color: #202020;
 }
 .episode svg {
   width: 2rem;
   fill: #49df7b;
 }
 .episode h1 {
+  margin: 0rem 2rem;
+  white-space: nowrap;
   color: #fff;
   font-size: 1rem;
+  font-weight: 700;
   text-transform: capitalize;
-  margin: 0rem 1rem;
 }
 .episode-current {
   cursor: auto;
-  background-color: #20202000;
+  background-color: #202020;
+  border-top: 0.01rem solid #49df7b50;
+  border-bottom: 0.01rem solid #49df7b50;
 }
 
 
@@ -169,16 +188,25 @@
     flex-direction: column;
   }
 
-  .seriesContent {
+  .seriesDetails {
     width: 100%;
+    margin: 0px;
+    padding: 1rem;
+    border-radius: 0;
   }
   .seriesDetails img {
     width: 30%;
   }
+  .seriesTitle {
+    width: 100%;
+    white-space: normal;
+  }
 
   .episodes {
     width: 100%;
+    margin-left: 0;
     padding: 1rem 0;
+    border: none;
   }
   .episode {
     box-sizing: border-box;

@@ -45,6 +45,7 @@ const ScrapeContextProvider = (props) => {
     });
   };
   const scrapeSearch = (searchKey) => {
+    values.setSearchResults(null);
     search(searchKey).then((data) => {
       values.setSearchResults(data);
     });
