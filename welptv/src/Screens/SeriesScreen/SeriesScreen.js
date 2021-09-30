@@ -89,33 +89,36 @@ function InfoSection({ series }) {
 function EpisodeSection({ episodes, scrapeEpisode, currentEpisode }) {
   if (episodes && scrapeEpisode) {
     return (
-      <div className="episodes">
-        <div className="episodeDetails"></div>
-        {episodes.map(function (data, index) {
-          if (currentEpisode?.url === data.url) {
-            return (
-              <div key={data.url} className="episode episode-current">
-                <Play />
-                <h1>episode {index + 1}</h1>
-                <Eye />
-              </div>
-            );
-          } else {
-            return (
-              <div
-                key={data.url}
-                className="episode"
-                onClick={() => {
-                  scrapeEpisode(data.url);
-                }}
-              >
-                <Play />
-                <h1>episode {index + 1}</h1>
-                <Eye />
-              </div>
-            );
-          }
-        })}
+      <div className="episodesSection">
+        <div className="episodeDetails"> HI </div>
+        <div className="episodeList">
+          {episodes.map(function (data, index) {
+            if (currentEpisode?.url === data.url) {
+              return (
+                <div key={data.url} className="episode episode-current">
+                  <Play />
+                  <h1>episode {index + 1}</h1>
+                  <Eye />
+                </div>
+              );
+            } else {
+              return (
+                <div
+                  key={data.url}
+                  className="episode"
+                  onClick={() => {
+                    scrapeEpisode(data.url);
+                  }}
+                >
+                  <Play />
+                  <h1>episode {index + 1}</h1>
+                  <Eye />
+                </div>
+              );
+            }
+          })}
+        </div>
+        <div className="episodeSegments">bYE</div>
       </div>
     );
   } else {
