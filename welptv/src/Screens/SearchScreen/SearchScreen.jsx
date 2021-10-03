@@ -1,11 +1,11 @@
 import "./SearchScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
 import { useHistory } from "react-router-dom";
-import Navbar from "./../../Components/NavBar/NavBar";
-import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
+import Navbar from "../../Components/NavBar/NavBar";
+import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Search from "../../Components/SearchBar/SearchBar";
-import Loading from "./../../Components/Loading/Loading";
-import Heading from "./../../Components/Heading/Heading";
+import Loading from "../../Components/Loading/Loading";
+import Heading from "../../Components/Heading/Heading";
 
 
 function SearchScreen() {

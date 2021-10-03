@@ -1,8 +1,8 @@
 import { React, useRef } from "react";
 import "./SeriesScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
-import Navbar from "./../../Components/NavBar/NavBar";
-import Loading from "./../../Components/Loading/Loading";
+import Navbar from "../../Components/NavBar/NavBar";
+import Loading from "../../Components/Loading/Loading";
 import { ReactComponent as Play } from "../../Icons/play.svg";
 import { ReactComponent as Eye } from "../../Icons/eye.svg";
 
