@@ -5,8 +5,8 @@
 [] Empty and Error state UI  
 
 #### HomeScreen:  
-    [] Info cards needs optional margin params  
-    [] Info cards need an optional btn params  
+    [x] Info cards needs optional margin params  
+    [x] Info cards need an optional btn params  
     [] 'Top Picks' section -> get data from firebase  
     [] 'Recently Viewed' section -> create a saving and loading func, (context/service)  
 

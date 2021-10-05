@@ -31,7 +31,7 @@ function HomeScreen() {
             </div>
 
             <div className="homeMain">
-              <InfoCard title={message.title} desc={message.body} />
+              <InfoCard title={message.title} desc={message.body} btnText={""} margin="0rem 0rem 1rem 0rem" />
 
               <Latest list={state.values?.latest} scrapeSeries={state.scrapeSeries}/>
               
@@ -65,7 +65,7 @@ function HomeScreen() {
                 </div>
               </Heading>
 
-              <InfoCard title={message.title} desc={message.body} />
+              <InfoCard title={message.title} desc={message.body} btnText={""} />
             </div>
           </div>
         );

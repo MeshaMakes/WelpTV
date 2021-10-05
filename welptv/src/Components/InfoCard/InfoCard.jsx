@@ -3,9 +3,10 @@ import "./InfoCard.css"
 
 const InfoCard = (props) => {
     return (
-        <div className="infoCard">
+        <div style={{ margin: props.margin ? props.margin : "0" }} className="infoCard">
             <h2> {props.title} </h2>
             <p> {props.desc} </p>
+            {props.btnText !== "" && <button> {props.btnText} </button>}
         </div>
     )
 }

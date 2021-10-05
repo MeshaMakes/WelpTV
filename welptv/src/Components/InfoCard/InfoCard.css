@@ -15,3 +15,17 @@
     color: #fff;
     font-weight: 500;
 }
+
+.infoCard button {
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem  1rem;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(3, 194, 89);
+}
+
+.infoCard button:hover {
+    background-color: rgba(2, 197, 90, 0.80);
+}
