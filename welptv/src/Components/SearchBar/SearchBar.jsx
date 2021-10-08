@@ -12,12 +12,11 @@ const SearchBar = (props) => {
                 props.onSubmitted(searchVal)
             }
         }
-        console.log(e.target.elements.searchTxt.value);
     }
 
     return (
-        <form className="searchBox" onSubmit={getSearch}>
-            <input id="searchTxt"  className="searchInput" type="text" placeholder="Enter a Series Name"/>
+        <form className="searchBox" autoComplete="off" onSubmit={getSearch} style={{margin: props.margin}}>
+            <input id="searchTxt" autoComplete="off" className="searchInput" type="text" placeholder="Enter a Series Name"/>
             <button className="searchBtn" href="#">
                 <Search/>
             </button>

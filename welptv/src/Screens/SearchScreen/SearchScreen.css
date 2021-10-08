@@ -29,43 +29,41 @@
 }
 
 .searchSeriesGrid {
-    width: 100%;
-    padding: 2rem 5rem 2rem 2.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0rem 5rem 2rem 2.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: center;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    flex-direction: column-reverse;
     box-sizing: border-box;
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    align-items: center;
-    justify-items: center;
+    align-items: flex-start;
+    justify-content: center;
   }
 
-
-  @media only screen and (max-width: 600px) {
-    .search {
-      flex-direction: column-reverse;
-      box-sizing: border-box;
-      align-items: flex-start;
-      justify-content: center;
-    }
-  
-    .searchNavContainer {
-      height: min-content;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0rem;
-    }
-    
-    .searchMain {
-      width: 100%;
-      height: 100%;
-      padding: 1rem;
-      padding-bottom: 5rem;
-    }
-  
-    .searchSeriesGrid {
-      padding: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-    }
+  .searchNavContainer {
+    height: min-content;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0rem;
   }
 
-  
+  .searchMain {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .searchSeriesGrid {
+    padding: 0rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50%-1rem), 0.5fr));
+  }
+}

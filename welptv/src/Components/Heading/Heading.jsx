@@ -6,7 +6,7 @@ const Heading = function (props) {
     <div
       className="headingContainer"
       style={{
-        margin: props.margin ? props.margin : "0",
+        margin: props.margin,
       }}
     >
       <h1 className="headingTitle">{props.title}</h1>

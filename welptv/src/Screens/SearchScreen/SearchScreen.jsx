@@ -7,7 +7,6 @@ import Search from "../../Components/SearchBar/SearchBar";
 import Loading from "../../Components/Loading/Loading";
 import Heading from "../../Components/Heading/Heading";
 
-
 function SearchScreen() {
   return (
     <ScrapeContext.Consumer>
@@ -20,7 +19,7 @@ function SearchScreen() {
           
             <div className="searchMain">
 
-              <Search onSubmitted={(val) => state.scrapeSearch(val)}/>
+              <Search margin="0 0 2rem 0" onSubmitted={(val) => state.scrapeSearch(val)}/>
 
               <Results
                 list={state.values?.searchResults}
@@ -46,9 +45,9 @@ function Results({ list, scrapeSeries }) {
       <Heading
         title={list.length + " Results"}
         margin="0rem 0rem 3rem 0rem"
-        padding="0"
+        padding="1.5rem 0"
       >
-        <div className="homeSeriesGrid">
+        <div className="searchSeriesGrid">
           {list?.map(function (item) {
             return (
               <SeriesCard
