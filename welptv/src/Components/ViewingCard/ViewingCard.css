@@ -1,0 +1,86 @@
+.viewingCardContainer {
+  z-index: 9999;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+
+  cursor: pointer;
+
+  width: min-content;
+  max-width: 50%;
+  height: min-content;
+  background-color: #ffffffe0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 1rem 1rem 0;
+  border-left: 0.25rem solid #49df7b;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  animation: action 1s infinite alternate;
+  -webkit-animation: action 1s infinite alternate;
+}
+.viewingCardContainer:hover {
+  animation-play-state: paused;
+}
+@keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1rem);
+  }
+}
+@-webkit-keyframes action {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1rem);
+  }
+}
+
+.viewingCardImage {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.viewingDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 1rem;
+}
+.viewingCardContainer .viewingTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0rem;
+  text-align: start;
+  white-space: nowrap;
+}
+.viewingCardContainer .viewingSubTitle {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5ch;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0.5rem 0 0 0;
+  text-overflow: ellipsis;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.viewingCardContainer svg {
+  width: 2rem;
+  fill: #000000;
+  transition: 600ms;
+}
+.viewingCardContainer svg:hover {
+  width: 2.5rem;
+  fill: #49df7b;
+}

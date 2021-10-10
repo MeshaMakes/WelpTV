@@ -6,6 +6,7 @@ import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
 import Loading from "./../../Components/Loading/Loading";
 import InfoCard from "./../../Components/InfoCard/InfoCard";
 import Heading from "./../../Components/Heading/Heading";
+import ViewingCard from "./../../Components/ViewingCard/ViewingCard";
 
 function HomeScreen() {
   const data = {
@@ -66,6 +67,8 @@ function HomeScreen() {
               </Heading>
 
               <InfoCard title={message.title} desc={message.body} btnText={""} />
+
+              <ViewingCard />
             </div>
           </div>
         );

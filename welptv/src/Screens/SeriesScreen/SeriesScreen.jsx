@@ -69,7 +69,7 @@ function InfoSection({ series }) {
 
           <div className="info">
             <h1 className="seriesTitle">{series.name}</h1>
-            <h1 className="seriesStatus"> Status</h1>
+            <h1 className="seriesStatus">{series.status}</h1>
             <div className="genres">
               <h1>1</h1>
               <h1>2</h1>
@@ -78,7 +78,7 @@ function InfoSection({ series }) {
           </div>
         </div>
 
-        <h1 className="description">{series.description}</h1>
+        <p className="description">{series.description}</p>
       </div>
     );
   } else {

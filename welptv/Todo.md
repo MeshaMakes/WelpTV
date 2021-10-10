@@ -1,6 +1,6 @@
 # Todos:
 
-[] Series hovering card on screens
+[x] Series Viewing Card hovering on screens
 [] Fix the 100vh problem on mobile
 [] Empty and Error state UIs
 
