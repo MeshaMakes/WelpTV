@@ -47,6 +47,7 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+
 .viewingDetails {
   width: 100%;
   display: flex;
@@ -55,6 +56,7 @@
   justify-content: center;
   margin: 0 1rem;
 }
+
 .viewingCardContainer .viewingTitle {
   font-size: 1rem;
   font-weight: 700;
@@ -63,6 +65,7 @@
   text-align: start;
   white-space: nowrap;
 }
+
 .viewingCardContainer .viewingSubTitle {
   font-size: 0.6rem;
   font-weight: 700;
@@ -80,6 +83,7 @@
   fill: #000000;
   transition: 600ms;
 }
+
 .viewingCardContainer svg:hover {
   width: 2.5rem;
   fill: #49df7b;
