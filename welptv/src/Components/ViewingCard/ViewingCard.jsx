@@ -4,8 +4,8 @@ import ScrapeContext from "../../Services/ScrapeContext";
 import { ReactComponent as CloseIcon } from "../../Icons/close.svg";
 
 function ViewingCard() {
-  const [coords, setCoords] = useState({});
   const cardRef = useRef();
+  const [coords, setCoords] = useState({});
 
   const episodeNumber = (epsiodes, currentEpisode) => {
     return (
@@ -13,33 +13,55 @@ function ViewingCard() {
     );
   };
 
+  const onDragStart = (e) => {
+    if(cardRef){
+      const rect = cardRef.current.getBoundingClientRect();
+      setCoords({
+        offsetX: rect.left - e.pageX,
+        offsetY: rect.top - e.pageY,
+      });
+    }
+  };
+
   const onDrag = (e) => {
-    if(e.pageX > 0 && e.pageY > 0){
+    if (e.pageX > 0 && e.pageY > 0) {
       setCoords({
         x: e.pageX,
         y: e.pageY,
+        offsetX: coords.offsetX,
+        offsetY: coords.offsetY,
       });
     }
-  }
+  };
 
   const onDragEnd = () => {
     const rect = cardRef.current.getBoundingClientRect();
-    console.log(coords.x + rect.width, window.innerWidth);
-    console.log(coords.y + rect.height, window.innerHeight);
-    if((coords.x + rect.width) < window.innerWidth && (coords.y + rect.height) < window.innerHeight){
-      if((coords.x + rect.width) > 0 && (coords.y + rect.height) > 0){
-        cardRef.current.style.left = coords.x + "px";
-        cardRef.current.style.top = coords.y + "px";
+    if (
+      coords.x + rect.width < window.innerWidth &&
+      coords.y + rect.height < window.innerHeight
+    ) {
+      if (coords.x + rect.width > 0 && coords.y + rect.height > 0) {
+        const left = (coords.x + coords.offsetX);
+        const top = (coords.y + coords.offsetY);
+        cardRef.current.style.left = left + "px";
+        cardRef.current.style.top = top + "px";
       }
     }
-  }
+  };
 
   return (
     <ScrapeContext.Consumer>
       {(state) => {
         if (state.values.series && state.values.episode) {
           return (
-            <div ref={cardRef} className="viewingCardContainer" draggable onDrag={onDrag} onDragEnd={onDragEnd}>
+            <div
+              ref={cardRef}
+              className="viewingCardContainer"
+              draggable
+              onDragStart={onDragStart}
+              onDrag={onDrag}
+              onDragEnd={onDragEnd}
+            >
               <img
                 className="viewingCardImage"
                 src={state.values.series.image}
