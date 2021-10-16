@@ -7,9 +7,9 @@ function ViewingCard() {
   const cardRef = useRef();
   const [coords, setCoords] = useState({});
 
-  const episodeNumber = (epsiodes, currentEpisode) => {
+  const episodeNumber = (episode, currentEpisode) => {
     return (
-      epsiodes.findIndex((epsiode) => epsiode.url === currentEpisode.url) + 1
+      episode.findIndex((episode) => episode.url === currentEpisode.url) + 1
     );
   };
 

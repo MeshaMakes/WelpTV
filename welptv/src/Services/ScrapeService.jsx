@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ScrapeContext from "./ScrapeContext";
+import useStorage from "./StorageHook";
 
 const Values = () => {
   const [latest, setLatest] = useState();
@@ -20,12 +21,14 @@ const Values = () => {
 };
 
 const ScrapeContextProvider = (props) => {
+  const storageHook = useStorage();
   const values = Values();
 
-  const scrapeEpisode = (url) => {
+  const scrapeEpisode = (seriesName, url) => {
     if (values.episode?.url !== url) {
       values.setEpisode(null);
       getEpisode(url).then((data) => {
+        storageHook.setEpisode(seriesName, data);
         values.setEpisode(data);
       });
     }
@@ -34,7 +37,8 @@ const ScrapeContextProvider = (props) => {
     if (values.series?.url !== url) {
       values.setEpisode(null);
       getInfo(url).then((data) => {
-        scrapeEpisode(data.episodes[0].url);
+        storageHook.setRecent(data,);
+        scrapeEpisode(data.name, data.episodes[0].url);
         values.setSeries(data);
       });
     }
@@ -271,8 +275,8 @@ async function getEpisode(episodeUrl) {
       const videoSrc = iframe.getAttribute("src");
 
       return {
-        url: episodeUrl,
-        videoUrl: videoSrc,
+        url: episodeUrl, // this is the episode url on the website
+        videoUrl: videoSrc, // this is the iframe Url gotten off of the [episodeUrl] webpage
       };
     });
 }

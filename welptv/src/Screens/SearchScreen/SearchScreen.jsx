@@ -6,7 +6,6 @@ import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Search from "../../Components/SearchBar/SearchBar";
 import Loading from "../../Components/Loading/Loading";
 import Heading from "../../Components/Heading/Heading";
-import ViewingCard from "./../../Components/ViewingCard/ViewingCard";
 
 function SearchScreen() {
   return (
@@ -27,7 +26,6 @@ function SearchScreen() {
                 scrapeSeries={state.scrapeSeries}
               />
             </div>
-            <ViewingCard />
           </div>
         );
       }}

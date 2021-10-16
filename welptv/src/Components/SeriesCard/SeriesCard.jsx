@@ -12,6 +12,10 @@ const SeriesCard = (props) => {
     }
   }, [cardRef]);
 
+  if(!props.data){
+    return <div></div>;
+  }
+  
   if (props.type === "thumbnail") {
     return (
       <div onClick={props.onClick}
@@ -45,11 +49,11 @@ const SeriesCard = (props) => {
           <img
             className="ticketImage"
             src={props.data.image}
-            alt={props.data.title}
+            alt={props.data.name}
           />
           <div className="ticketDetails">
-            <h1 className="cardTitle">{props.data.title}</h1>
-            <h1 className="cardSubTitle">{props.data.season}</h1>
+            <h1 className="cardTitle">{props.data.name}</h1>
+            <h1 className="cardSubTitle">{"Episode " + props.data.progress}</h1>
           </div>
         </div>
       

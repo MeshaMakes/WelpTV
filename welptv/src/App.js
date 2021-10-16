@@ -4,10 +4,14 @@ import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import SearchScreen from "./Screens/SearchScreen/SearchScreen";
 import SeriesScreen from "./Screens/SeriesScreen/SeriesScreen";
 import ScrapeContextProvider from "./Services/ScrapeService";
+import ViewingCard from "./Components/ViewingCard/ViewingCard";
 
 function App() {
   return (
     <ScrapeContextProvider>
+      
+      <ViewingCard />
+
       <BrowserRouter>
         <Switch>
           <Route path="/home"> <HomeScreen /> </Route>

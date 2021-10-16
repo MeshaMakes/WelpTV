@@ -24,7 +24,9 @@ const SeriesScreen = () => {
 
               <EpisodeSection
                 episodes={state.values?.series?.episodes}
-                scrapeEpisode={state.scrapeEpisode}
+                scrapeEpisode={(episodeUrl)=>{
+                  state.scrapeEpisode(state.values.series.name, episodeUrl);
+                }}
                 currentEpisode={state.values.episode}
               />
             </div>
