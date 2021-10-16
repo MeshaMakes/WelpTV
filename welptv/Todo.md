@@ -11,7 +11,7 @@
     [x] Info cards needs optional margin params
     [x] Info cards need an optional btn params
     [] 'Top Picks' section -> get data from firebase
-    [] 'Recently Viewed' section -> create a saving(locally) and loading(locally) func, (context/service)
+    [x] 'Recently Viewed' section -> create a saving(locally) and loading(locally) func, (context/service)
 
 #### SearchScreen:
     [x] Search bar needs bottom margin
@@ -22,4 +22,4 @@
     [] Add episode list segments
     [] Give info section a collapse-able functionality
     [] Remove navbar and put a back btn
-    [] Start saving(locally) and loading(locally) watched episodes
+    [x] Start saving(locally) and loading(locally) watched episodes
