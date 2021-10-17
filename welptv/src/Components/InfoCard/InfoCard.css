@@ -1,6 +1,5 @@
 .infoCard {
-    /* background-color: #202020; */
-    background: none;
+    background-color: #202020a0;
     border-left: 0.25rem solid rgb(3, 194, 89);
     padding: 1rem;
     border-radius: 0.5rem;
