@@ -55,16 +55,16 @@ function StorageHook() {
     return list;
   };
 
-  const setFavorite = (series) => {
-    let list = JSON.parse(localStorage.getItem("favorites"));
+  const setWatchlist = (series) => {
+    let list = JSON.parse(localStorage.getItem("watchlist"));
     if(!list){
         list = [];
     }
     list.unshift(series);
-    localStorage.setItem("favorites", JSON.stringify(list));
+    localStorage.setItem("watchlist", JSON.stringify(list));
   };
-  const getFavorites = () => {
-    let list = JSON.parse(localStorage.getItem("favorites"));
+  const getWatchlist = () => {
+    let list = JSON.parse(localStorage.getItem("watchlist"));
     if(!list){
         list = [];
     }
@@ -78,8 +78,8 @@ function StorageHook() {
     getRecents: getRecents,
     setRecent: setRecent,
 
-    getFavorites: getFavorites,
-    setFavorite: setFavorite,
+    getWatchlist: getWatchlist,
+    setWatchlist: setWatchlist,
   };
 }
 
