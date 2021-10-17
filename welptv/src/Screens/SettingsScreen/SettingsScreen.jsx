@@ -19,13 +19,13 @@ const SettingsScreen = () => {
                 title="About"
                 desc="This is WelpTV!"
                 btnText=""
-                margin="0rem 0rem 1rem 0rem"
+                margin="0rem 0rem 2rem 0rem"
                 onClick={() => {}}
               />
 
               <InfoCard
                 title="History"
-                desc="This option will remove your most recently watched anime series. This is permanent by the way. \n\nThis option was highly requested.. for some reason.."
+                desc={"This option will remove your most recently watched anime series. This is permanent by the way.\n\n This option was highly requested.. for some reason.."}
                 btnText="Clear History"
                 margin="0rem 0rem 1rem 0rem"
                 onClick={() => {}}
