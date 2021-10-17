@@ -36,6 +36,7 @@ function HomeScreen() {
                 desc={message.body}
                 btnText={""}
                 margin="0rem 0rem 1rem 0rem"
+                onClick={() => {}}
               />
 
               <Latest
@@ -60,6 +61,7 @@ function HomeScreen() {
                 title={message.title}
                 desc={message.body}
                 btnText={""}
+                onClick={() => {}}
               />
             </div>
           </div>
