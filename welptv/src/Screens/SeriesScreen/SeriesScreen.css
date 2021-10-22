@@ -38,6 +38,7 @@
 .video {
   width: 100%;
 }
+
 .video iframe {
   width: 100%;
   height: 100%;
@@ -56,6 +57,7 @@
   justify-content: flex-start;
   overflow: hidden;
 }
+
 .seriesDetailsRow {
   width: 100%;
   display: flex;
@@ -63,6 +65,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .seriesDetails img {
   width: 20%;
   height: auto;
@@ -71,14 +74,30 @@
   display: block;
   align-self: flex-start;
 }
+
+
+.seriesDetailsRow h4 {
+  margin: 0;
+  padding: 0.5rem 0rem 0rem 0rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.seriesDetailsRow h4:hover {
+  border-bottom: solid 0.2rem #49df7b;
+}
+
+
 .seriesTitle {
   color: #49df7b;
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
-  padding: 0;
+  padding: 0rem 1rem 0rem 0rem;
   white-space: normal;
 }
+
 .seriesStatus {
   color: #fff;
   font-size: 0.5rem;
@@ -88,6 +107,7 @@
   margin: 0;
   padding: 0;
 }
+
 .genres {
   font-size: 0.75rem;
   font-weight: 500;
@@ -97,6 +117,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .description {
   font-size: 1rem;
   font-weight: 500;
@@ -105,8 +126,6 @@
   padding: 0;
   white-space: pre-line;
 }
-
-
 
 
 .episodesSection {
@@ -139,6 +158,7 @@
   align-items: center;
   overflow: auto;
 }
+
 .episode {
   cursor: pointer;
   box-sizing: border-box;
@@ -150,13 +170,16 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .episode:hover {
   background-color: #202020;
 }
+
 .episode svg {
   width: 2rem;
   fill: #49df7b;
 }
+
 .episode h1 {
   margin: 0rem 2rem;
   white-space: nowrap;
@@ -165,6 +188,7 @@
   font-weight: 700;
   text-transform: capitalize;
 }
+
 .episode-current {
   cursor: auto;
   background-color: #202020;
@@ -179,8 +203,6 @@
   padding: 1rem;
   background-color: #202020;
 }
-
-
 
 
 @media only screen and (max-width: 600px) {

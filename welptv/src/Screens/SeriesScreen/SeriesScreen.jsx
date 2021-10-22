@@ -37,6 +37,8 @@ const SeriesScreen = () => {
   );
 };
 
+
+
 function VideoSection({ episode }) {
   const iframeRef = useRef();
 
@@ -69,6 +71,7 @@ function InfoSection({ series }) {
         <div className="seriesDetailsRow">
           <img src={series.image} alt="sumn" />
 
+
           <div className="info">
             <h1 className="seriesTitle">{series.name}</h1>
             <h1 className="seriesStatus">{series.status}</h1>
@@ -77,7 +80,11 @@ function InfoSection({ series }) {
               <h1>2</h1>
               <h1>3</h1>
             </div>
+
           </div>
+
+          <h4>Save</h4>
+          
         </div>
 
         <p className="description">{series.description}</p>
