@@ -1,16 +1,21 @@
 .infoCard {
     background-color: #202020a0;
-    border-left: 0.25rem solid rgb(3, 194, 89);
+    border-left: 0.25rem solid #49df7b;
     padding: 1rem;
     border-radius: 0.5rem;
     margin: 2rem;
     justify-items: center;
+    transition: 1000ms;
+}
+.infoCard:hover {
+    background-color: #202020d0;
+    border-right: 0.25rem solid #49df7b;
 }
 
 .infoCard h2 {
     letter-spacing: 0.1ch;
     padding: 0;
-    color: rgb(3, 194, 89);
+    color: #49df7b;
     margin-bottom: 1rem;
 }
 
@@ -22,14 +27,18 @@
 
 .infoCard button {
     outline: none;
-    border: none;
-    border-radius: 0.3rem;
-    padding: 0.5rem  1rem;
+    border: 0.1rem solid #49df7b00;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    padding: 0.5rem  1.25rem;
     cursor: pointer;
-    color: #fff;
+    color: #49df7b;
     background-color: #202020;
+    transition: 500ms;
 }
 
 .infoCard button:hover {
-    background-color: #20202090;
+    background-color: #49df7b20;
+    border: 0.1rem solid #49df7b;
 }
+
