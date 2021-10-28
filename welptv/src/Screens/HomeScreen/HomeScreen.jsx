@@ -1,6 +1,7 @@
 import "./HomeScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
 import useStorage from "../../Services/StorageHook";
+import useSize from "../../Services/SizeHook";
 import { useHistory } from "react-router-dom";
 import Navbar from "./../../Components/NavBar/NavBar";
 import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
@@ -10,6 +11,7 @@ import Heading from "./../../Components/Heading/Heading";
 
 function HomeScreen() {
   const storageHook = useStorage();
+  const sizeHook = useSize();
 
   const message = {
     title: "Welcome to WelpTV",
@@ -20,7 +22,7 @@ function HomeScreen() {
     <ScrapeContext.Consumer>
       {(state) => {
         return (
-          <div className="home">
+          <div ref={sizeHook.ref} className="home">
             <div className="homeNavContainer">
               <Navbar />
             </div>

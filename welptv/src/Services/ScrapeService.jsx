@@ -84,6 +84,7 @@ const ScrapeContextProvider = (props) => {
   useEffect(() => {
     scrapeLatest();
     scrapeSearch("hunter x");
+    // eslint-disable-next-line
   }, []);
 
   return (

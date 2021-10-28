@@ -2,10 +2,11 @@
 
 ### App:
     [x] Series Viewing Card hovering on screens
-    [] Fix the 100vh problem on mobile
+    [x] Fix the 100vh problem on mobile
     [] loading and Error state UIs for images
     [] Empty and Error state UIs
     [] add stylings for other browsers
+    [] Make floating card dismissable
 
 #### HomeScreen:
     [x] Info cards needs optional margin params

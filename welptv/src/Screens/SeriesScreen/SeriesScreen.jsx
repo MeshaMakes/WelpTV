@@ -1,17 +1,19 @@
 import { React, useRef } from "react";
 import "./SeriesScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
+import useSize from "../../Services/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import Loading from "../../Components/Loading/Loading";
 import { ReactComponent as Play } from "../../Icons/play.svg";
 import { ReactComponent as Eye } from "../../Icons/eye.svg";
 
 const SeriesScreen = () => {
+  const sizeHook = useSize();
   return (
     <ScrapeContext.Consumer>
       {(state) => {
         return (
-          <div className="series">
+          <div ref={sizeHook.ref} className="series">
             <div className="seriesNavContainer">
               <Navbar />
             </div>

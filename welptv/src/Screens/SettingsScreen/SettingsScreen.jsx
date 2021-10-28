@@ -1,15 +1,17 @@
 import React from "react";
 import "./SettingsScreen.css"
 import InfoCard from "../../Components/InfoCard/InfoCard";
+import useSize from "../../Services/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import ScrapeContext from "../../Services/ScrapeContext";
 
 const SettingsScreen = () => {
+  const sizeHook = useSize();
   return (
     <ScrapeContext.Consumer>
       {(state) => {
         return (
-          <div className="settings">
+          <div ref={sizeHook.ref} className="settings">
             <div className="settingsNavContainer">
               <Navbar />
             </div>

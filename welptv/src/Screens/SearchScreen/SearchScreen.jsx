@@ -1,6 +1,7 @@
 import "./SearchScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
 import { useHistory } from "react-router-dom";
+import useSize from "../../Services/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Search from "../../Components/SearchBar/SearchBar";
@@ -8,11 +9,12 @@ import Loading from "../../Components/Loading/Loading";
 import Heading from "../../Components/Heading/Heading";
 
 function SearchScreen() {
+  const sizeHook = useSize();
   return (
     <ScrapeContext.Consumer>
       {(state) => {
         return (
-          <div className="search">
+          <div ref={sizeHook.ref} className="search">
             <div className="searchNavContainer">
               <Navbar />
             </div>
