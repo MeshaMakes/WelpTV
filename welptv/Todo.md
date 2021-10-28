@@ -6,7 +6,7 @@
     [] Loading and Error state UIs for images
     [] Empty and Error state UIs
     [] Add stylings for other browsers
-    [] Make floating card dismissable
+    [x] Make floating card dismissable
     [] Fix grid card display
 
 #### HomeScreen:

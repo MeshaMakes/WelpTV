@@ -29,7 +29,7 @@ function HomeScreen() {
 
             <div className="homeMain">
               <Recently
-                list={storageHook.getRecents()}
+                list={storageHook.getRecents}
                 scrapeSeries={state.scrapeSeries}
               />
               

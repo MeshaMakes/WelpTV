@@ -1,9 +1,11 @@
 import "./ViewingCard.css";
 import { React, useState, useRef } from "react";
+import { useLocation } from 'react-router-dom';
 import ScrapeContext from "../../Services/ScrapeContext";
 import { ReactComponent as CloseIcon } from "../../Icons/close.svg";
 
 function ViewingCard() {
+  const location = useLocation();
   const cardRef = useRef();
   const [coords, setCoords] = useState({});
 
@@ -49,43 +51,54 @@ function ViewingCard() {
     }
   };
 
-  return (
-    <ScrapeContext.Consumer>
-      {(state) => {
-        if (state.values.series && state.values.episode) {
-          return (
-            <div
-              ref={cardRef}
-              className="viewingCardContainer"
-              draggable
-              onDragStart={onDragStart}
-              onDrag={onDrag}
-              onDragEnd={onDragEnd}
-            >
-              <img
-                className="viewingCardImage"
-                src={state.values.series.image}
-                alt={state.values.series.name}
-              />
-              <div className="viewingDetails">
-                <h1 className="viewingTitle">{state.values.series.name}</h1>
-                <h1 className="viewingSubTitle">
-                  {"Episode " +
-                    episodeNumber(
-                      state.values.series.episodes,
-                      state.values.episode
-                    )}
-                </h1>
+  if(location.pathname.includes("/series")) {
+    return (
+      <div></div>
+    );
+  } else {
+    return (
+      <ScrapeContext.Consumer>
+        {(state) => {
+          if (state.values.series && state.values.episode) {
+            return (
+              <div
+                ref={cardRef}
+                className="viewingCardContainer"
+                draggable
+                onDragStart={onDragStart}
+                onDrag={onDrag}
+                onDragEnd={onDragEnd}
+              >
+                <img
+                  className="viewingCardImage"
+                  src={state.values.series.image}
+                  alt={state.values.series.name}
+                />
+  
+                <div className="viewingDetails">
+                  <h1 className="viewingTitle">{state.values.series.name}</h1>
+                  <h1 className="viewingSubTitle">
+                    {"Episode " +
+                      episodeNumber(
+                        state.values.series.episodes,
+                        state.values.episode
+                      )}
+                  </h1>
+                </div>
+  
+                <CloseIcon onClick={() => {
+                  state.values.setSeries(null); 
+                  state.values.setEpisode(null);
+                }} />
               </div>
-              <CloseIcon />
-            </div>
-          );
-        } else {
-          return <div />;
-        }
-      }}
-    </ScrapeContext.Consumer>
-  );
+            );
+          } else {
+            return <div />;
+          }
+        }}
+      </ScrapeContext.Consumer>
+    );
+  }
 }
 
 export default ViewingCard;

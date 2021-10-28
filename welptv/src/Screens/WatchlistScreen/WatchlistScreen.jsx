@@ -24,7 +24,7 @@ function WatchlistScreen() {
 
             <div className="watchlistMain">
               <Results
-                list={storageHook.getWatchlist()}
+                list={storageHook.getWatchlist}
                 scrapeSeries={state.scrapeSeries}
               />
 

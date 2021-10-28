@@ -12,9 +12,10 @@ function App() {
   return (
     <ScrapeContextProvider>
       
-      <ViewingCard />
+      
 
       <BrowserRouter>
+        <ViewingCard />
         <Switch>
           <Route path="/home"> <HomeScreen /> </Route>
           <Route path="/search"> <SearchScreen /> </Route>
