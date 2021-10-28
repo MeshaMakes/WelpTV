@@ -2,6 +2,7 @@ import { React, useRef } from "react";
 import "./SeriesScreen.css";
 import ScrapeContext from "../../Services/ScrapeContext";
 import useSize from "../../Services/SizeHook";
+import useStorage from "../../Services/StorageHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import Loading from "../../Components/Loading/Loading";
 import { ReactComponent as Play } from "../../Icons/play.svg";
@@ -67,6 +68,7 @@ function VideoSection({ episode }) {
 }
 
 function InfoSection({ series }) {
+  const storageHook = useStorage();
   if (series) {
     return (
       <div className="seriesDetails">
@@ -85,7 +87,9 @@ function InfoSection({ series }) {
 
           </div>
 
-          <h4>Save</h4>
+          <h4 onClick={() => {
+            storageHook.setWatchlist(series);
+          }}>{(storageHook.getWatchlist.find(e => e.url === series.url)) ? "Unsave" : "Save" }</h4>
           
         </div>
 

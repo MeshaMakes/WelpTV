@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 
 function SizeHook() {
     const ref = useRef();
 
     useEffect(() => {
         window.addEventListener("resize", () => {
-            if(ref) {
+            if(ref && ref.current) {
                 ref.current.style.width = window.innerWidth + "px";
                 ref.current.style.height = window.innerHeight + "px";
             }

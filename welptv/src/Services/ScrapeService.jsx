@@ -4,7 +4,6 @@ import useStorage from "./StorageHook";
 
 const Values = () => {
   const [latest, setLatest] = useState();
-  //const [watchlist, setWatchlist] = useState();
   const [series, setSeries] = useState();
   const [episode, setEpisode] = useState();
   const [searchResults, setSearchResults] = useState();
@@ -12,8 +11,6 @@ const Values = () => {
   return {
     latest,
     setLatest,
-    //watchlist,
-    //setWatchlist,
     series,
     setSeries,
     episode,
@@ -48,17 +45,6 @@ const ScrapeContextProvider = (props) => {
     }
   };
 
-  // const scrapeWatchlist = (url) => {
-  //   if (values.series?.url !== url) {
-  //     values.setEpisode(null);
-  //     getInfo(url).then((data) => {
-  //       storageHook.setWatchlist(data,);
-  //       scrapeEpisode(data.name, data.episodes[0].url);
-  //       values.setWatchlist(data);
-  //     });
-  //   }
-  // };
-
   const scrapeLatest = () => {
     latest().then((data) => {
       values.setLatest(data);
@@ -75,7 +61,6 @@ const ScrapeContextProvider = (props) => {
   const state = {
     values: values,
     scrapeLatest: scrapeLatest,
-    //scrapeWatchlist : scrapeWatchlist,
     scrapeSearch: scrapeSearch,
     scrapeSeries: scrapeSeries,
     scrapeEpisode: scrapeEpisode,

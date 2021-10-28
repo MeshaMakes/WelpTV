@@ -1,6 +1,11 @@
+import { useState, useEffect } from "react";
 
 function StorageHook() {
   // recently views, favorites, watched episodes,
+  const [episodeState, setEpisodeState] = useState([]);
+  const [recentState, setRecentState] = useState([]);
+  const [watchlistState, setWatchlistState] = useState([]);
+
   const episodeNumber = (episode, currentEpisode) => {
       if(currentEpisode){
         return (
@@ -12,6 +17,7 @@ function StorageHook() {
   };
   
   const setEpisode = (seriesName, episode) => {
+    //* updates the list of watched episodes of a particular series
     let list = JSON.parse(localStorage.getItem(seriesName));
     if(!list){
         list = [];
@@ -21,8 +27,11 @@ function StorageHook() {
     });
     list.unshift(episode);
     localStorage.setItem(seriesName, JSON.stringify(list));
+    setEpisodeState(list);
   };
+
   const getEpisodes = (seriesName) => {
+    //* gets the watched episodes of particular series
     let list = JSON.parse(localStorage.getItem(seriesName));
     if(!list){
         list = [];
@@ -33,7 +42,7 @@ function StorageHook() {
   const setRecent = (series) => {
     let list = JSON.parse(localStorage.getItem("recently"));
     if(list){
-        list = list.filter((item)=>{ // remove duplicates
+        list = list.filter((item)=>{ //* remove duplicates
             return item.url !== series.url;
         });
     }else{
@@ -46,7 +55,9 @@ function StorageHook() {
       list = list.slice(0, 12);
     }
     localStorage.setItem("recently", JSON.stringify(list));
+    setRecentState(list);
   };
+
   const getRecents = () => {
     let list = JSON.parse(localStorage.getItem("recently"));
     if(!list){
@@ -60,9 +71,20 @@ function StorageHook() {
     if(!list){
         list = [];
     }
-    list.unshift(series);
+
+    if(list.find(e => e.url === series.url)) {
+      //* check if list contains series => remove it
+      const index = list.findIndex(e => e.url === series.url);
+      list.splice(index, 1);
+    } else {
+      //* check if list does not contain series => add it
+      list.unshift(series);
+    }
+
     localStorage.setItem("watchlist", JSON.stringify(list));
+    setWatchlistState(list);
   };
+  
   const getWatchlist = () => {
     let list = JSON.parse(localStorage.getItem("watchlist"));
     if(!list){
@@ -71,14 +93,19 @@ function StorageHook() {
     return list;
   };
 
+  useEffect(() => {
+    setRecentState(getRecents());
+    setWatchlistState(getWatchlist());
+  }, []);
+
   return {
-    getEpisodes: getEpisodes,
+    getEpisodes: episodeState,
     setEpisode: setEpisode,
 
-    getRecents: getRecents,
+    getRecents: recentState,
     setRecent: setRecent,
 
-    getWatchlist: getWatchlist,
+    getWatchlist: watchlistState,
     setWatchlist: setWatchlist,
   };
 }
