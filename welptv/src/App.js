@@ -11,9 +11,6 @@ import ViewingCard from "./Components/ViewingCard/ViewingCard";
 function App() {
   return (
     <ScrapeContextProvider>
-      
-      
-
       <BrowserRouter>
         <ViewingCard />
         <Switch>
