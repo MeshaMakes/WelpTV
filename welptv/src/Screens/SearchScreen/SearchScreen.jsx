@@ -1,7 +1,7 @@
 import "./SearchScreen.css";
-import ScrapeContext from "../../Services/ScrapeContext";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { useHistory } from "react-router-dom";
-import useSize from "../../Services/SizeHook";
+import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Search from "../../Components/SearchBar/SearchBar";
@@ -24,7 +24,7 @@ function SearchScreen() {
               <Search margin="0 0 2rem 0" onSubmitted={(val) => state.scrapeSearch(val)}/>
 
               <Results
-                list={state.values?.searchResults}
+                list={state?.searchResults}
                 scrapeSeries={state.scrapeSeries}
               />
             </div>

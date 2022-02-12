@@ -1,16 +1,18 @@
 # WelpTV
 
+[<img width="50" height="50" fill="green" style="fill: white;" src="https://raw.githubusercontent.com/MeshaMakes/WelpTV/62ffe13c9b037bce154c570862442ef1d8ead36b/welptv/src/logo.svg">](https://google.com)
+
 ## From _**DM Studios**_
 
 [![Generic badge](https://img.shields.io/badge/status-Ongoing-green.svg)](https://shields.io/)
 
-WelpTV is an Antiguan project, made with the goal of bringing together the island's anime community for a a premium experience of seamless, ad-free & no hassle anime streaming!
+**WelpTV** is an Antiguan project, made with the goal of bringing together the island's anime community for a premium experience of *seamless*, *ad-free* & *no hassle* anime streaming!
 
 ## Features
 
 - Free and Unlimited :heavy_check_mark:
 - Private and Secure :heavy_check_mark:
-- Great Design and Experience :heavy_check_mark:
+- Premium Design and Experience :heavy_check_mark:
 - Available on All Devices :heavy_check_mark:
 
 ## Development

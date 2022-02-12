@@ -1,8 +1,8 @@
 import { React, useRef } from "react";
 import "./SeriesScreen.css";
-import ScrapeContext from "../../Services/ScrapeContext";
-import useSize from "../../Services/SizeHook";
-import useStorage from "../../Services/StorageHook";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
+import useSize from "../../Utils/Hooks/SizeHook";
+import useStorage from "../../Utils/Hooks/StorageHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import Loading from "../../Components/Loading/Loading";
 import { ReactComponent as Play } from "../../Icons/play.svg";
@@ -21,16 +21,16 @@ const SeriesScreen = () => {
 
             <div className="seriesMain">
               <div className="seriesContent">
-                <VideoSection episode={state.values.episode} />
-                <InfoSection series={state.values.series} />
+                <VideoSection episode={state.episode} />
+                <InfoSection series={state.series} />
               </div>
 
               <EpisodeSection
-                episodes={state.values?.series?.episodes}
+                episodes={state?.series?.episodes}
                 scrapeEpisode={(episodeUrl)=>{
-                  state.scrapeEpisode(state.values.series.name, episodeUrl);
+                  state.scrapeEpisode(state.series.name, episodeUrl);
                 }}
-                currentEpisode={state.values.episode}
+                currentEpisode={state.episode}
               />
             </div>
           </div>

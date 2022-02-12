@@ -1,9 +1,9 @@
 import React from "react";
 import "./SettingsScreen.css"
 import InfoCard from "../../Components/InfoCard/InfoCard";
-import useSize from "../../Services/SizeHook";
+import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
-import ScrapeContext from "../../Services/ScrapeContext";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 
 const SettingsScreen = () => {
   const sizeHook = useSize();

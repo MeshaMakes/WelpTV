@@ -1,9 +1,9 @@
 import React from "react";
 import "./WatchlistScreen.css";
-import ScrapeContext from "../../Services/ScrapeContext";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { useHistory } from "react-router-dom";
-import useStorage from "../../Services/StorageHook";
-import useSize from "../../Services/SizeHook";
+import useStorage from "../../Utils/Hooks/StorageHook";
+import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "./../../Components/NavBar/NavBar";
 import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
 import Loading from "./../../Components/Loading/Loading";

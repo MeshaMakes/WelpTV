@@ -1,7 +1,7 @@
 import "./ViewingCard.css";
 import { React, useState, useRef } from "react";
 import { useLocation } from 'react-router-dom';
-import ScrapeContext from "../../Services/ScrapeContext";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { ReactComponent as CloseIcon } from "../../Icons/close.svg";
 
 function ViewingCard() {
@@ -59,7 +59,7 @@ function ViewingCard() {
     return (
       <ScrapeContext.Consumer>
         {(state) => {
-          if (state.values.series && state.values.episode) {
+          if (state.series && state.episode) {
             return (
               <div
                 ref={cardRef}
@@ -71,24 +71,24 @@ function ViewingCard() {
               >
                 <img
                   className="viewingCardImage"
-                  src={state.values.series.image}
-                  alt={state.values.series.name}
+                  src={state.series.image}
+                  alt={state.series.name}
                 />
   
                 <div className="viewingDetails">
-                  <h1 className="viewingTitle">{state.values.series.name}</h1>
+                  <h1 className="viewingTitle">{state.series.name}</h1>
                   <h1 className="viewingSubTitle">
                     {"Episode " +
                       episodeNumber(
-                        state.values.series.episodes,
-                        state.values.episode
+                        state.series.episodes,
+                        state.episode
                       )}
                   </h1>
                 </div>
   
                 <CloseIcon onClick={() => {
-                  state.values.setSeries(null); 
-                  state.values.setEpisode(null);
+                  state.setSeries(null); 
+                  state.setEpisode(null);
                 }} />
               </div>
             );

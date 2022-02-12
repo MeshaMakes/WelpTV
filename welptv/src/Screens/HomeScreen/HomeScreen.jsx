@@ -1,7 +1,7 @@
 import "./HomeScreen.css";
-import ScrapeContext from "../../Services/ScrapeContext";
-import useStorage from "../../Services/StorageHook";
-import useSize from "../../Services/SizeHook";
+import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
+import useStorage from "../../Utils/Hooks/StorageHook";
+import useSize from "../../Utils/Hooks/SizeHook";
 import { useHistory } from "react-router-dom";
 import Navbar from "./../../Components/NavBar/NavBar";
 import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
@@ -42,7 +42,7 @@ function HomeScreen() {
               />
 
               <Latest
-                list={state.values?.latest}
+                list={state?.latest}
                 scrapeSeries={state.scrapeSeries}
               />
 
