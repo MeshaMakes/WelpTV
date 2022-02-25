@@ -1,6 +1,6 @@
 import "./SearchScreen.css";
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
@@ -9,7 +9,8 @@ import Loading from "../../Components/Loading/Loading";
 import Heading from "../../Components/Heading/Heading";
 
 function SearchScreen() {
-  const sizeHook = useSize();
+  const sizeHook = useSize()
+
   return (
     <ScrapeContext.Consumer>
       {(state) => {
@@ -36,21 +37,22 @@ function SearchScreen() {
 }
 
 function Results({ list, scrapeSeries }) {
-  let history = useHistory();
+  const navigate = useNavigate()
+
   const openSeries = (item) => {
-    scrapeSeries(item.url);
-    history.push("/series");
-  };
+    scrapeSeries(item.url)
+    navigate("/series")
+  }
 
   if (list) {
     return (
       <Heading
-        title={list.length + " Results"}
+        title={list.data.length + " Results"}
         margin="0rem 0rem 3rem 0rem"
         padding="1.5rem 0"
       >
         <div className="searchSeriesGrid">
-          {list?.map(function (item) {
+          {list.data?.map(function (item) {
             return (
               <SeriesCard
                 key={item.url}

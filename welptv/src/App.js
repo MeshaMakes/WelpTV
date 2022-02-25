@@ -1,5 +1,6 @@
 import "./Utils/Colors.css"
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import UserContextProvider from "./Services/UserService"
 import ScrapeContextProvider from "./Services/ScrapeService"
 import AuthScreen from "./Screens/AuthScreen/AuthScreen"
 import HomeScreen from "./Screens/HomeScreen/HomeScreen"
@@ -11,21 +12,25 @@ import ViewingCard from "./Components/ViewingCard/ViewingCard"
 
 function App() {
   return (
-    <ScrapeContextProvider>
-      <BrowserRouter>
-        <ViewingCard />
-        <Switch>
-          <Route path="/auth"> <AuthScreen /> </Route>
-          <Route path="/home"> <HomeScreen /> </Route>
-          <Route path="/search"> <SearchScreen /> </Route>
-          <Route path="/series"> <SeriesScreen /> </Route>
-          <Route path="/watchlist"> <WatchlistScreen /> </Route>
-          <Route path="/settings"> <SettingsScreen /> </Route>
-          <Route path="/"> <Redirect to="/home" />  </Route>
-        </Switch>
-      </BrowserRouter>
-    </ScrapeContextProvider>
-  );
+    <UserContextProvider>
+      <ScrapeContextProvider>
+        <BrowserRouter>
+          <ViewingCard />
+          <Routes>
+
+            <Route path="/auth" element={<AuthScreen/>}/>
+            <Route path="/home" element={<HomeScreen/>}/>
+            <Route path="/search" element={<SearchScreen/>}/>
+            <Route path="/series" element={<SeriesScreen/>}/>
+            <Route path="/watchlist" element={<WatchlistScreen/>}/>
+            <Route path="/settings" element={<SettingsScreen/>}/>
+            <Route path="*" element={<Navigate to="/home" />} />
+
+          </Routes>
+        </BrowserRouter>
+      </ScrapeContextProvider>
+    </UserContextProvider>
+  )
 }
 
-export default App;
+export default App

@@ -12,29 +12,32 @@ const ContextState = () => {
   const [series, setSeries] = useState()
   const [episode, setEpisode] = useState()
   const [searchResults, setSearchResults] = useState()
-  let currentServer = 0 // need to get the actual value of the user's selected server
+  let currentServer = 1 // need to get the actual value of the user's selected server
 
   const scrapeLatest = () => {
-    switchSelector(currentServer, 0, null).then((data) => {
-      setLatest(data)
+    switchSelector(currentServer, 0, null).then((result) => {
+      setLatest(result)
     })
   }
 
   const scrapeSearch = (searchKey) => {
     setSearchResults(null)
-    switchSelector(currentServer, 1, searchKey).then((data) => {
-      setSearchResults(data)
+    switchSelector(currentServer, 1, searchKey).then((result) => {
+      setSearchResults(result)
     })
   }
 
   const scrapeSeries = (url) => {
     if(series?.url !== url) { //if trying to get different series
+      //setSeries(null)
       setEpisode(null)
 
-      switchSelector(currentServer, 2, url).then((data) => {
-        storageHook.setRecent(data)
-        scrapeEpisode(data.name, data.episodes[0].url)
-        setSeries(data)
+      switchSelector(currentServer, 2, url).then((result) => {
+        if(result.hasData){
+          storageHook.setRecent(result.data)
+          scrapeEpisode(result.data.name, result.data.episodes[0].url)
+        }
+        setSeries(result)
       })
     }
   }
@@ -42,9 +45,11 @@ const ContextState = () => {
   const scrapeEpisode = (seriesName, url) => {
     if(episode?.url !== url) { // if trying to get different episode
       setEpisode(null)
-      switchSelector(currentServer, 3, url).then((data) => {
-        storageHook.setEpisode(seriesName, data)
-        setEpisode(data)
+      switchSelector(currentServer, 3, url).then((result) => {
+        if(result.hasData){
+          storageHook.setEpisode(result.data.seriesName, result.data)
+        }
+        setEpisode(result)
       })
     }
   }
@@ -62,7 +67,7 @@ const ContextState = () => {
     scrapeSearch: scrapeSearch,
     scrapeSeries: scrapeSeries,
     scrapeEpisode: scrapeEpisode,
-  };
+  }
 }
 
 const ScrapeContextProvider = (props) => {

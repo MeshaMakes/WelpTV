@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { ReactComponent as Logo } from "../../logo.svg";
 import { ReactComponent as Home } from "../../Icons/home.svg";
 import { ReactComponent as Search } from "../../Icons/search.svg";
@@ -8,7 +8,7 @@ import { ReactComponent as Live } from "../../Icons/live.svg";
 import { ReactComponent as Watchlist } from "../../Icons/bookmarks.svg";
 import { ReactComponent as Settings } from "../../Icons/settings.svg";
 
-var navItems = [
+const navItems = [
   {
     name: "Home",
     path: "/home",
@@ -34,9 +34,11 @@ var navItems = [
     path: "/settings",
     icon: <Settings />,
   },
-];
+]
 
 const Navbar = () => {
+  const location = useLocation()
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -49,8 +51,7 @@ const Navbar = () => {
         return (
           <NavLink
             key={val.name}
-            className="nav-item"
-            activeClassName="is-active"
+            className={`nav-item ${location.pathname === val.path ? "is-active" : "" }`}
             to={val.path}
           >
             {val.icon}

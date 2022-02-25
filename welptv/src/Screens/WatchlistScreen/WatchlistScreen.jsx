@@ -1,7 +1,7 @@
 import React from "react";
 import "./WatchlistScreen.css";
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useStorage from "../../Utils/Hooks/StorageHook";
 import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "./../../Components/NavBar/NavBar";
@@ -37,11 +37,12 @@ function WatchlistScreen() {
 }
 
 function Results({ list, scrapeSeries }) {
-  let history = useHistory();
+  const navigate = useNavigate()
+
   const openSeries = (item) => {
     scrapeSeries(item.url);
-    history.push("/series");
-  };
+    navigate("/series");
+  }
 
   if (list) {
     return (

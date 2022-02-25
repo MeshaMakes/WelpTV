@@ -2,7 +2,7 @@ import "./HomeScreen.css";
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import useStorage from "../../Utils/Hooks/StorageHook";
 import useSize from "../../Utils/Hooks/SizeHook";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./../../Components/NavBar/NavBar";
 import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
 import Loading from "./../../Components/Loading/Loading";
@@ -74,14 +74,14 @@ function HomeScreen() {
 }
 
 function Latest({ list, scrapeSeries }) {
-  let history = useHistory();
+  const navigate = useNavigate()
+  
   const openSeries = (item) => {
-    let url = "https://www.animekisa.cc/anime/" + fix(item.name).toLowerCase();
-    scrapeSeries(url);
-    history.push("/series");
+    scrapeSeries(item.url)
+    navigate("/series")
   };
 
-  if (list) {
+  if(list) {
     return (
       <Heading
         title="Recently Updated"
@@ -89,10 +89,10 @@ function Latest({ list, scrapeSeries }) {
         padding="0"
       >
         <div className="homeSeriesGrid">
-          {list?.map(function (item) {
+          {list.data?.map(function (item, index) {
             return (
               <SeriesCard
-                key={item.url}
+                key={index}
                 type="poster"
                 data={item}
                 onClick={() => {
@@ -110,11 +110,11 @@ function Latest({ list, scrapeSeries }) {
 }
 
 function Recently({ list, scrapeSeries }) {
-  let history = useHistory();
+  const navigate = useNavigate()
+
   const openSeries = (item) => {
-    let url = "https://www.animekisa.cc/anime/" + fix(item.name).toLowerCase();
-    scrapeSeries(url);
-    history.push("/series");
+    scrapeSeries(item.url)
+    navigate("/series")
   };
 
   if (list) {
@@ -144,47 +144,4 @@ function Recently({ list, scrapeSeries }) {
   }
 }
 
-function fix(data) {
-  const specials = [
-    "☆",
-    "!",
-    "@",
-    "#",
-    "$",
-    "%",
-    "^",
-    "&",
-    "*",
-    "(",
-    ")",
-    "_",
-    " - ",
-    " -",
-    "- ",
-    "+",
-    "=",
-    "[",
-    "]",
-    "{",
-    "}",
-    '"',
-    ":",
-    ";",
-    ",",
-    ".",
-    "/",
-    "?",
-    ">",
-    "<",
-    "'",
-    "|",
-  ];
-  let source = data.toString();
-  for (let i = 0; i < specials.length; i++) {
-    source = source.replaceAll(specials[i], "");
-  }
-  source = source.replaceAll(" ", "-");
-  return source;
-}
-
-export default HomeScreen;
+export default HomeScreen

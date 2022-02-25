@@ -11,7 +11,9 @@ function ViewingCard() {
 
   const episodeNumber = (episode, currentEpisode) => {
     return (
-      episode.findIndex((episode) => episode.url === currentEpisode.url) + 1
+      episode.findIndex((episode) =>
+        episode.url === currentEpisode.url
+      ) + 1
     );
   };
 
@@ -71,17 +73,17 @@ function ViewingCard() {
               >
                 <img
                   className="viewingCardImage"
-                  src={state.series.image}
-                  alt={state.series.name}
+                  src={state.series.data.image}
+                  alt={state.series.data.name}
                 />
   
                 <div className="viewingDetails">
-                  <h1 className="viewingTitle">{state.series.name}</h1>
+                  <h1 className="viewingTitle">{state.series.data.name}</h1>
                   <h1 className="viewingSubTitle">
                     {"Episode " +
                       episodeNumber(
-                        state.series.episodes,
-                        state.episode
+                        state.series.data.episodes,
+                        state.episode.data
                       )}
                   </h1>
                 </div>

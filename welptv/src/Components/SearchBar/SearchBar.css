@@ -47,7 +47,7 @@
   fill: #fff;
 }
 .searchBox:hover > .searchBtn {
-  background-color: rgb(3, 194, 89);
+  background-color: #03c259;
   color: #fff;
 }
 
