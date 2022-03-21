@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./WatchlistScreen.css";
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { useNavigate } from "react-router-dom";
@@ -10,29 +10,24 @@ import Loading from "./../../Components/Loading/Loading";
 import Heading from "./../../Components/Heading/Heading";
 
 function WatchlistScreen() {
+  const contextState = useContext(ScrapeContext)
   const storageHook = useStorage();
   const sizeHook = useSize();
 
   return (
-    <ScrapeContext.Consumer>
-      {(state) => {
-        return (
-          <div ref={sizeHook.ref} className="watchlist">
-            <div className="watchlistNavContainer">
-              <Navbar />
-            </div>
+    <div ref={sizeHook.ref} className="watchlist">
+      <div className="watchlistNavContainer">
+        <Navbar />
+      </div>
 
-            <div className="watchlistMain">
-              <Results
-                list={storageHook.getWatchlist}
-                scrapeSeries={state.scrapeSeries}
-              />
+      <div className="watchlistMain">
+        <Results
+          list={storageHook.getWatchlist}
+          scrapeSeries={contextState.scrapeSeries}
+        />
 
-            </div>
-          </div>
-        );
-      }}
-    </ScrapeContext.Consumer>
+      </div>
+    </div>
   );
 }
 

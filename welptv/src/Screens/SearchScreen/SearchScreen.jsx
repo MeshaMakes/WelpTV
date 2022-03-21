@@ -1,4 +1,5 @@
 import "./SearchScreen.css";
+import { useContext } from "react"
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { useNavigate } from "react-router-dom";
 import useSize from "../../Utils/Hooks/SizeHook";
@@ -9,30 +10,25 @@ import Loading from "../../Components/Loading/Loading";
 import Heading from "../../Components/Heading/Heading";
 
 function SearchScreen() {
+  const contextState = useContext(ScrapeContext)
   const sizeHook = useSize()
 
   return (
-    <ScrapeContext.Consumer>
-      {(state) => {
-        return (
-          <div ref={sizeHook.ref} className="search">
-            <div className="searchNavContainer">
-              <Navbar />
-            </div>
-          
-            <div className="searchMain">
+    <div ref={sizeHook.ref} className="search">
+      <div className="searchNavContainer">
+        <Navbar />
+      </div>
+    
+      <div className="searchMain">
 
-              <Search margin="0 0 2rem 0" onSubmitted={(val) => state.scrapeSearch(val)}/>
+        <Search margin="0 0 2rem 0" onSubmitted={(val) => contextState.scrapeSearch(val)}/>
 
-              <Results
-                list={state?.searchResults}
-                scrapeSeries={state.scrapeSeries}
-              />
-            </div>
-          </div>
-        );
-      }}
-    </ScrapeContext.Consumer>
+        <Results
+          list={contextState?.searchResults}
+          scrapeSeries={contextState.scrapeSeries}
+        />
+      </div>
+    </div>
   );
 }
 

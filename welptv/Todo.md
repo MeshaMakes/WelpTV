@@ -1,13 +1,13 @@
 # Todos:
 
 ### App:
+    [] Add stylings for other browsers
     [x] Series Viewing Card hovering on screens
     [x] Fix the 100vh problem on mobile
     [] Loading and Error state UIs for images
     [] Empty and Error state UIs
-    [] Add stylings for other browsers
     [x] Make floating card dismissable
-    [] Fix grid card display
+    [x] Fix grid card display for when there is only one result
 
 #### HomeScreen:
     [x] Info cards needs optional margin params

@@ -7,22 +7,22 @@ import { useNavigate } from "react-router-dom"
 import Loading from "./../../Components/Loading/Loading"
 
 function AuthScreen() {
-  const context = useContext(UserContext)
+  const contextState = useContext(UserContext)
   const navigate = useNavigate()
   const sizeHook = useSize()
   const [uiState, setUiState] = useState("login")
 
   useEffect(() => {
-    if(context && navigate){
-      if(context.hasUser){
+    if(contextState && navigate){
+      if(contextState.hasUser){
         navigate("/home")
       }
     }
     // eslint-disable-next-line
-  }, [context])
+  }, [contextState])
   
 
-  if(!context.hasUser){
+  if(!contextState.hasUser){
     return (
       <div ref={sizeHook.ref} className="auth">
         <Logo />

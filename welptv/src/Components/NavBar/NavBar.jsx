@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { NavLink, useLocation } from "react-router-dom";
-import { ReactComponent as Logo } from "../../logo.svg";
+import { ReactComponent as Logo } from "../../Icons/logo/logo.svg";
 import { ReactComponent as Home } from "../../Icons/home.svg";
 import { ReactComponent as Search } from "../../Icons/search.svg";
 import { ReactComponent as Live } from "../../Icons/live.svg";

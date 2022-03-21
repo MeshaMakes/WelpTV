@@ -1,4 +1,5 @@
 import "./HomeScreen.css";
+import { useContext } from "react"
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import useStorage from "../../Utils/Hooks/StorageHook";
 import useSize from "../../Utils/Hooks/SizeHook";
@@ -10,6 +11,7 @@ import InfoCard from "./../../Components/InfoCard/InfoCard";
 import Heading from "./../../Components/Heading/Heading";
 
 function HomeScreen() {
+  const contextState = useContext(ScrapeContext)
   const storageHook = useStorage();
   const sizeHook = useSize();
 
@@ -19,57 +21,51 @@ function HomeScreen() {
   };
 
   return (
-    <ScrapeContext.Consumer>
-      {(state) => {
-        return (
-          <div ref={sizeHook.ref} className="home">
-            <div className="homeNavContainer">
-              <Navbar />
-            </div>
+    <div ref={sizeHook.ref} className="home">
+      <div className="homeNavContainer">
+        <Navbar />
+      </div>
 
-            <div className="homeMain">
-              <Recently
-                list={storageHook.getRecents}
-                scrapeSeries={state.scrapeSeries}
-              />
-              
-              <InfoCard
-                title={message.title}
-                desc={message.body}
-                btnText={""}
-                margin="0rem 0rem 1rem 0rem"
-                onClick={() => {}}
-              />
+      <div className="homeMain">
+        <Recently
+          list={storageHook.getRecents}
+          scrapeSeries={contextState.scrapeSeries}
+        />
+        
+        <InfoCard
+          title={message.title}
+          desc={message.body}
+          btnText={""}
+          margin="0rem 0rem 1rem 0rem"
+          onClick={() => {}}
+        />
 
-              <Latest
-                list={state?.latest}
-                scrapeSeries={state.scrapeSeries}
-              />
+        <Latest
+          list={contextState?.latest}
+          scrapeSeries={contextState.scrapeSeries}
+        />
 
-              <Heading
-                title="Top Picks by the Developers of Welptv"
-                margin="0rem 0rem 3rem 0rem"
-                padding="0"
-              >
-                <div className="topPicksContainer">
-                  <SeriesCard
-                    type="thumbnail"
-                    data={storageHook.data}
-                  ></SeriesCard>
-                </div>
-              </Heading>
-
-              <InfoCard
-                title={message.title}
-                desc={message.body}
-                btnText={""}
-                onClick={() => {}}
-              />
-            </div>
+        <Heading
+          title="Top Picks by the Developers of Welptv"
+          margin="0rem 0rem 3rem 0rem"
+          padding="0"
+        >
+          <div className="topPicksContainer">
+            <SeriesCard
+              type="thumbnail"
+              data={storageHook.data}
+            ></SeriesCard>
           </div>
-        );
-      }}
-    </ScrapeContext.Consumer>
+        </Heading>
+
+        <InfoCard
+          title={message.title}
+          desc={message.body}
+          btnText={""}
+          onClick={() => {}}
+        />
+      </div>
+    </div>
   );
 }
 
