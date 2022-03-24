@@ -4,7 +4,7 @@ import UserContext from "../../Utils/Contexts/UserContext"
 import useSize from "../../Utils/Hooks/SizeHook"
 import { ReactComponent as Logo } from "../../Icons/logo/logo.svg"
 import { useNavigate } from "react-router-dom"
-import Loading from "./../../Components/Loading/Loading"
+import Loading from "../../Components/Loading/Loading"
 
 function AuthScreen() {
   const contextState = useContext(UserContext)

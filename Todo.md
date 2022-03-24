@@ -8,6 +8,7 @@
     [] Empty and Error state UIs
     [x] Make floating card dismissable
     [x] Fix grid card display for when there is only one result
+    [] make settings UI more like youtube settings UI
 
 #### HomeScreen:
     [x] Info cards needs optional margin params

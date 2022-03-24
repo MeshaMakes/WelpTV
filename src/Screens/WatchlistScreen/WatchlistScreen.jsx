@@ -4,10 +4,10 @@ import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
 import { useNavigate } from "react-router-dom";
 import useStorage from "../../Utils/Hooks/StorageHook";
 import useSize from "../../Utils/Hooks/SizeHook";
-import Navbar from "./../../Components/NavBar/NavBar";
-import SeriesCard from "./../../Components/SeriesCard/SeriesCard";
-import Loading from "./../../Components/Loading/Loading";
-import Heading from "./../../Components/Heading/Heading";
+import Navbar from "../../Components/NavBar/NavBar";
+import SeriesCard from "../../Components/SeriesCard/SeriesCard";
+import Loading from "../../Components/Loading/Loading";
+import Heading from "../../Components/Heading/Heading";
 
 function WatchlistScreen() {
   const contextState = useContext(ScrapeContext)
