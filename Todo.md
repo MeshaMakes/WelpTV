@@ -1,6 +1,7 @@
 # Todos:
 
 ### App:
+    [] change favicon
     [] Add stylings for other browsers
     [x] Series Viewing Card hovering on screens
     [x] Fix the 100vh problem on mobile
@@ -8,7 +9,12 @@
     [] Empty and Error state UIs
     [x] Make floating card dismissable
     [x] Fix grid card display for when there is only one result
-    [] make settings UI more like youtube settings UI
+    [] Make the Settings screen UI look more like youtube's settings UI
+    [] Make hovering Bell Icon Button to display
+
+### AuthScreen:
+    [] Implement a register view
+    [] Implement sign in and register functionality
 
 #### HomeScreen:
     [x] Info cards needs optional margin params
@@ -19,6 +25,7 @@
 #### SearchScreen:
     [x] Search bar needs bottom margin
     [x] Remove search bar autofill
+    [] Fix search text field
 
 #### SeriesScreen:
     [] Add prev and next btns to change episodes
