@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./SettingsScreen.css"
-import InfoCard from "../../Components/InfoCard/InfoCard";
+import NotificationCard from "../../Components/NotificationCard/NotificationCard";
 import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import ScrapeContext from "../../Utils/Contexts/ScrapeContext";
@@ -16,7 +16,7 @@ const SettingsScreen = () => {
       </div>
 
       <div className="settingsMain">
-        <InfoCard
+        <NotificationCard
           title="About"
           desc="This is WelpTV!"
           btnText=""
@@ -24,7 +24,7 @@ const SettingsScreen = () => {
           onClick={() => {}}
         />
 
-        <InfoCard
+        <NotificationCard
           title="History"
           desc={"This option will remove your most recently watched anime series. This is permanent by the way.\n\nThis option was highly requested.. for some reason.."}
           btnText="Clear History"

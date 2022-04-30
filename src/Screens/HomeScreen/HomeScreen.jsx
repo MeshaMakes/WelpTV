@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Loading from "../../Components/Loading/Loading";
-import InfoCard from "../../Components/InfoCard/InfoCard";
-import Heading from "../../Components/Heading/Heading";
+import NotificationCard from "../../Components/NotificationCard/NotificationCard";
+import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 
 function HomeScreen() {
   const contextState = useContext(ScrapeContext)
@@ -32,7 +32,7 @@ function HomeScreen() {
           scrapeSeries={contextState.scrapeSeries}
         />
         
-        <InfoCard
+        <NotificationCard
           title={message.title}
           desc={message.body}
           btnText={""}
@@ -45,7 +45,7 @@ function HomeScreen() {
           scrapeSeries={contextState.scrapeSeries}
         />
 
-        <Heading
+        <SectionHeader
           title="Top Picks by the Developers of Welptv"
           margin="0rem 0rem 3rem 0rem"
           padding="0"
@@ -56,9 +56,9 @@ function HomeScreen() {
               data={storageHook.data}
             ></SeriesCard>
           </div>
-        </Heading>
+        </SectionHeader>
 
-        <InfoCard
+        <NotificationCard
           title={message.title}
           desc={message.body}
           btnText={""}
@@ -79,7 +79,7 @@ function Latest({ list, scrapeSeries }) {
 
   if(list) {
     return (
-      <Heading
+      <SectionHeader
         title="Recently Updated"
         margin="0rem 0rem 3rem 0rem"
         padding="0"
@@ -98,7 +98,7 @@ function Latest({ list, scrapeSeries }) {
             );
           })}
         </div>
-      </Heading>
+      </SectionHeader>
     );
   } else {
     return <Loading></Loading>;
@@ -118,7 +118,7 @@ function Recently({ list, scrapeSeries }) {
       return <div></div>;
     }
     return (
-      <Heading title="Recently Viewed" margin="0rem 0rem 3rem 0rem" padding="0">
+      <SectionHeader title="Recently Viewed" margin="0rem 0rem 3rem 0rem" padding="0">
         <div className="historyGrid">
           {list?.map(function (item) {
             return (
@@ -133,7 +133,7 @@ function Recently({ list, scrapeSeries }) {
             );
           })}
         </div>
-      </Heading>
+      </SectionHeader>
     );
   } else {
     return <Loading></Loading>;

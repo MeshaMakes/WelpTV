@@ -1,7 +1,7 @@
 import React from "react";
-import "./Heading.css";
+import "./SectionHeader.css";
 
-const Heading = function (props) {
+const SectionHeader = function (props) {
   return (
     <div
       className="headingContainer"
@@ -22,4 +22,4 @@ const Heading = function (props) {
   );
 };
 
-export default Heading;
+export default SectionHeader;

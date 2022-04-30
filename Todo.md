@@ -25,7 +25,7 @@
 #### SearchScreen:
     [x] Search bar needs bottom margin
     [x] Remove search bar autofill
-    [] Fix search text field
+    [x] Fix search text field
 
 #### SeriesScreen:
     [] Add prev and next btns to change episodes

@@ -1,9 +1,9 @@
 import React from 'react';
-import "./InfoCard.css";
+import "./NotificationCard.css";
 
-const InfoCard = (props) => {
+const NotificationCard = (props) => {
     return (
-        <div style={{ margin: props.margin ? props.margin : "0" }} className="infoCard">
+        <div style={{ margin: props.margin ? props.margin : "0" }} className="notificationCard">
             <h2>{props.title} </h2>
             <p>{props.desc} </p>
             {props.btnText !== "" && <button onClick={props.onClick}> {props.btnText} </button>}
@@ -11,4 +11,4 @@ const InfoCard = (props) => {
     );
 }
 
-export default InfoCard;
+export default NotificationCard;

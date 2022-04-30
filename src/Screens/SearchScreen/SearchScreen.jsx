@@ -7,7 +7,8 @@ import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Search from "../../Components/SearchBar/SearchBar";
 import Loading from "../../Components/Loading/Loading";
-import Heading from "../../Components/Heading/Heading";
+import SectionHeader from "../../Components/SectionHeader/SectionHeader";
+import TextForm from "../../Components/TextForm/TextForm"
 
 function SearchScreen() {
   const contextState = useContext(ScrapeContext)
@@ -21,7 +22,11 @@ function SearchScreen() {
     
       <div className="searchMain">
 
-        <Search margin="0 0 2rem 0" onSubmitted={(val) => contextState.scrapeSearch(val)}/>
+        <TextForm style={{ width: "100%", margin: "0 0 2rem 0", padding: "0" }} onSubmitted={(val) => contextState.scrapeSearch(val)}>
+          <input className="input" type="text" placeholder="Search" />
+        </TextForm>
+
+        {/* <Search margin="0 0 2rem 0" onSubmitted={(val) => contextState.scrapeSearch(val)}/> */}
 
         <Results
           list={contextState?.searchResults}
@@ -42,7 +47,7 @@ function Results({ list, scrapeSeries }) {
 
   if (list) {
     return (
-      <Heading
+      <SectionHeader
         title={list.data.length + " Results"}
         margin="0rem 0rem 3rem 0rem"
         padding="1.5rem 0"
@@ -61,7 +66,7 @@ function Results({ list, scrapeSeries }) {
             );
           })}
         </div>
-      </Heading>
+      </SectionHeader>
     );
   } else {
     return <Loading></Loading>;

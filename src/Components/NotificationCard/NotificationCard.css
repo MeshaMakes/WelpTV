@@ -1,4 +1,4 @@
-.infoCard {
+.notificationCard {
     background-color: #202020a0;
     border-left: 0.25rem solid #49df7b;
     padding: 1rem;
@@ -7,25 +7,25 @@
     justify-items: center;
     transition: 1000ms;
 }
-.infoCard:hover {
+.notificationCard:hover {
     background-color: #202020d0;
     border-right: 0.25rem solid #49df7b;
 }
 
-.infoCard h2 {
+.notificationCard h2 {
     letter-spacing: 0.1ch;
     padding: 0;
     color: #49df7b;
     margin-bottom: 1rem;
 }
 
-.infoCard p {
+.notificationCard p {
     color: #fff;
     font-weight: 500;
     white-space: pre-wrap;
 }
 
-.infoCard button {
+.notificationCard button {
     outline: none;
     border: 0.1rem solid #49df7b00;
     border-radius: 0.5rem;
@@ -37,7 +37,7 @@
     transition: 500ms;
 }
 
-.infoCard button:hover {
+.notificationCard button:hover {
     background-color: #49df7b20;
     border: 0.1rem solid #49df7b;
 }

@@ -5,6 +5,7 @@ import useSize from "../../Utils/Hooks/SizeHook"
 import { ReactComponent as Logo } from "../../Icons/logo/logo.svg"
 import { useNavigate } from "react-router-dom"
 import Loading from "../../Components/Loading/Loading"
+import TextForm from "../../Components/TextForm/TextForm"
 
 function AuthScreen() {
   const contextState = useContext(UserContext)
@@ -43,11 +44,24 @@ function InputContainer(){
   const formRef = useRef()
 
   const onSubmit = (e) => {
+    if(formRef && formRef.current) {
+      const valueMap = (elements, callback) => {
+        const values = []
+        for(let i = 0; i < elements.length; i++){
+          values.push(callback(elements[i]))
+        }
+        return values
+      }
+      const data = valueMap(formRef.current.elements, (i) => {
+        return i.value
+      })
 
+      //console.log(data);
+    }
   }
 
   return (
-    <form ref={formRef} className="inputContainer">
+    <TextForm formRef={formRef} onSubmitted={onSubmit}>
       <input className="input" type="email" placeholder="Email address" />
       <input className="input" type="password" placeholder="Password" />
 
@@ -59,7 +73,7 @@ function InputContainer(){
         </div>
 
       </div>
-    </form>
+    </TextForm>
   )
 }
 

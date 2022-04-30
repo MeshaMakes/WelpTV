@@ -7,7 +7,7 @@ import useSize from "../../Utils/Hooks/SizeHook";
 import Navbar from "../../Components/NavBar/NavBar";
 import SeriesCard from "../../Components/SeriesCard/SeriesCard";
 import Loading from "../../Components/Loading/Loading";
-import Heading from "../../Components/Heading/Heading";
+import SectionHeader from "../../Components/SectionHeader/SectionHeader";
 
 function WatchlistScreen() {
   const contextState = useContext(ScrapeContext)
@@ -41,7 +41,7 @@ function Results({ list, scrapeSeries }) {
 
   if (list) {
     return (
-      <Heading
+      <SectionHeader
         title={list.length + " Saved in Watchlist"}
         margin="0rem 0rem 3rem 0rem"
         padding="1.5rem 0"
@@ -60,7 +60,7 @@ function Results({ list, scrapeSeries }) {
             );
           })}
         </div>
-      </Heading>
+      </SectionHeader>
     );
   } else {
     return <Loading></Loading>;

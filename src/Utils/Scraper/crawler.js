@@ -1,4 +1,4 @@
-const crawler = ({ siteName, action }) => {
+const Crawler = ({ siteName, action }) => {
     // using the configurations described in the yaml, scrape the website and get the info
 
     const getFromStorage = async ({ fileName }) => {
@@ -53,3 +53,6 @@ function stringFix(badString) {
       .replaceAll("&lt;", "<")
       .replaceAll("\\n", "");
 }
+
+
+export default Crawler

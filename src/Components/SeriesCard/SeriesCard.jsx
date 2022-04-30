@@ -1,7 +1,7 @@
 import { React, useRef, useEffect } from "react";
 import "./SeriesCard.css";
 
-const SeriesCard = (props) => {
+const SeriesCard = ({ type, data, onClick }) => {
   const cardRef = useRef();
 
   useEffect(() => {
@@ -12,53 +12,55 @@ const SeriesCard = (props) => {
     }
   }, [cardRef]);
 
-  if(!props.data){
+  if(!data){
     return <div></div>;
   }
   
-  if (props.type === "thumbnail") {
+  if (type === "thumbnail") {
     return (
-      <div onClick={props.onClick}
-          className="thumbnail"
-          style={{ backgroundImage: props.data.image }}
+      <div onClick={onClick}
+        className="thumbnail"
+        style={{ backgroundImage: data.image }}
+      >
+        <div
+          className="thumbnailOverlay"
+          style={{ backgroundColor: data.color }}
         >
-          <div
-            className="thumbnailOverlay"
-            style={{ backgroundColor: props.data.color }}
-          >
-            <h1 className="thumbnailTitle">THE TOP 10</h1>
-            <h1 className="cardSubTitle">{props.data.title}</h1>
-          </div>
+          <h1 className="thumbnailTitle">THE TOP 10</h1>
+          <h1 className="cardSubTitle">{data.name}</h1>
         </div>
-    );
-  } else if (props.type === "poster") {
-    return (
-      <div ref={cardRef} className="poster" onClick={props.onClick}>
-          <img
-            className="posterImage"
-            src={props.data.image}
-            alt={props.data.name}
-          />
-          <h1 className="cardTitle">{props.data.name}</h1>
-          <h1 className="cardSubTitle">{props.data.extra}</h1>
-        </div>
-    );
-  } else {
-    return (
-      <div className="ticket" onClick={props.onClick}>
-          <img
-            className="ticketImage"
-            src={props.data.image}
-            alt={props.data.name}
-          />
-          <div className="ticketDetails">
-            <h1 className="cardTitle">{props.data.name}</h1>
-            <h1 className="cardSubTitle">{"Episode " + props.data.progress}</h1>
-          </div>
-        </div>
-      
+      </div>
     );
   }
+
+  if (type === "poster") {
+    return (
+      <div ref={cardRef} className="poster" onClick={onClick}>
+        <img
+          className="posterImage"
+          src={data.image}
+          alt={data.name}
+        />
+        <h1 className="cardTitle">{data.name}</h1>
+        <h1 className="cardSubTitle">{data.extra}</h1>
+      </div>
+    );
+  }
+
+  return (
+    <div className="ticket" onClick={onClick}>
+      <img
+        className="ticketImage"
+        src={data.image}
+        alt={data.name}
+      />
+      <div className="ticketDetails">
+        <h1 className="cardTitle">{data.name}</h1>
+        <h1 className="cardSubTitle">{"Episode " + data.progress}</h1>
+      </div>
+    </div>
+    
+  );
 };
 
 export default SeriesCard;
